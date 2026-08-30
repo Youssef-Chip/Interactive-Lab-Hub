@@ -2,7 +2,7 @@
 
 _This project is to be done in teams of 2._
 
-**NAME OF BOTH COLLABORATOR(S) HERE**
+**NAME OF BOTH COLLABORATOR(S) HERE**\
 Yujing Zhou, Youssef Hassan
 
 **THE MASTERWORK YOU DREW FROM THE HAT:**
@@ -122,6 +122,8 @@ and the people around it. If you're new to storyboarding, read
 
 **Include pictures of your storyboards here.**
 
+![](storyboard.png)
+
 Use the storyboards to decide what interaction to prototype.
 
 **Summarize the feedback you got here.**
@@ -170,6 +172,10 @@ building any real electronics. (Zoom works well for recording; you can pin the
 video feed of whichever scene you want to capture.)
 
 **Include your first attempts at recording the wizarded set-up here.**
+(please see file first_try.mp4)
+
+<video src="first_try.mp4" controls width="600">
+</video>
 
 ## Part E. (optional) Costume the Device
 
@@ -191,11 +197,16 @@ and calm for a bedroom?
 the top of this lab: a viewer who knows the piece should recognize it; a viewer
 who doesn't should come away understanding what it's famous for. How might you illustrate the non-sequential aspects of the interaction in the sketch?
 
-**Include your video here.**
+**Include your video here.** (please see file final.mp4)
+
+<video src="final.mp4" controls width="600">
+</video>
 
 **Please indicate who you collaborated with on this lab.** Be generous in
 acknowledging their contributions, and credit any other influences (YouTube,
 Github, Twitter, a friend who lent you a lamp) that informed your recreation.
+
+We only looked up pictures online for the device.
 
 ---
 
