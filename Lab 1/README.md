@@ -133,13 +133,16 @@ is doing what you've scripted — a person can wave a flashlight, or you can nar
 it aloud.
 
 **Are there things that seemed better on paper than when acted out?**
-No, the storyboard and the interaction created was simple enough and easily reproducible when acted out.\
+No, the storyboard and the interaction created was simple enough and easily reproducible when acted out.
+
 
 **Did new ideas about the piece surface once you were on your feet?**
-The only new idea that came to mind was how to make the “On Air” sign appear once the light turned red.\
+The only new idea that came to mind was how to make the “On Air” sign appear once the light turned red.
+
 
 **Are there key moments in the interaction where things could go in a different direction?**
-Yes, ideally we would have the “On Air” sign be turned off and transparent, then make it turn red at the same time as the background.\
+Yes, ideally we would have the “On Air” sign be turned off and transparent, then make it turn red at the same time as the background.
+
 
 Iterate your storyboards to capture key non-sequential aspects of the interaction. 
 
