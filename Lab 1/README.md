@@ -3,8 +3,10 @@
 _This project is to be done in teams of 2._
 
 **NAME OF BOTH COLLABORATOR(S) HERE**
+Yujing Zhou, Youssef Hassan
 
 **THE MASTERWORK YOU DREW FROM THE HAT:**
+The ‘On-Air’ Light
 
 ---
 
@@ -92,6 +94,8 @@ the interaction*:
 **Describe your masterwork here, in your own words. What is the core interaction
 someone would recognize it by?**
 
+The broadcast starts, and the ‘ON-AIR’ light turns on. The host, studio staff, and people outside use the light to communicate whether they should avoid interruptions. This piece is famous for clearly signaling a live broadcast, but it only provides simple visual information. The light turns on during a broadcast, signaling others to stay quiet and not enter.
+
 ## Part A. Plan
 
 For your masterwork, reconstruct the interaction as a scene:
@@ -104,6 +108,12 @@ For your masterwork, reconstruct the interaction as a scene:
 - **Goals:** What is each player trying to do?
 
 **Describe your setting, players, activity, and goals here.**
+
+Setting: The interaction happens in or outside a radio or recording studio during a broadcast.
+Players: The players include the host, studio staff, guests, and people outside the studio.
+Activity: The light turns on during broadcasting, and people nearby respond by staying quiet or avoid entering the room.
+Goals: The host wants to avoid interruptions, while others want to know when it is appropriate to enter or speak.
+
 
 Now **sketch a 3 storyboards** of the interaction you are recreating. (The number may depend on the thing you drew, but stretch your thinking!) They
 don't need to be beautiful, but they must capture and communicate not only the behavior of the light, but how it affects
@@ -123,10 +133,14 @@ is doing what you've scripted — a person can wave a flashlight, or you can nar
 it aloud.
 
 **Are there things that seemed better on paper than when acted out?**
+No, the storyboard and the interaction created was simple enough and easily reproducible when acted out.
 
 **Did new ideas about the piece surface once you were on your feet?**
+The only new idea that came to mind was how to make the “On Air” sign appear once the light turned red.
 
 **Are there key moments in the interaction where things could go in a different direction?**
+Yes, ideally we would have the “On Air” sign be turned off and transparent, then make it turn red at the same time as the background.
+
 Iterate your storyboards to capture key non-sequential aspects of the interaction. 
 
 ## Part C. Prototype the Light (light first!)
