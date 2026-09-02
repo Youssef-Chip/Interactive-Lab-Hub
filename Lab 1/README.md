@@ -224,6 +224,13 @@ wasn't clear.
 **Who were the other groups you kibitzed with? Add links to their project pages here.**
 **Summarize the feedback you got from your partners here.**
 
+Jessica: https://github.com/chonjessica23/Interactive-Lab-Hub/tree/Fall2026/Lab%201
+
+Pallavi: https://github.com/pk633-cu/Interactive-Lab-Hub/blob/Fall2026/Lab%201/README.md
+
+Yuni: https://github.com/parky20/Interactive-Lab-Hub
+
+
 ## Remix, Update, or Critique the Master
 
 Now that you understand your masterwork from the inside, respond to it. Do the
