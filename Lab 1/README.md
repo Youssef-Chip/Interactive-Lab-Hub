@@ -172,10 +172,9 @@ building any real electronics. (Zoom works well for recording; you can pin the
 video feed of whichever scene you want to capture.)
 
 **Include your first attempts at recording the wizarded set-up here.**
-(please see file first_try.mp4)
 
-<video src="first_try.mp4" controls width="600">
-</video>
+https://github.com/user-attachments/assets/1ad7d92d-63ae-4c1d-b72b-574ad64f7ba2
+
 
 ## Part E. (optional) Costume the Device
 
@@ -197,10 +196,11 @@ and calm for a bedroom?
 the top of this lab: a viewer who knows the piece should recognize it; a viewer
 who doesn't should come away understanding what it's famous for. How might you illustrate the non-sequential aspects of the interaction in the sketch?
 
-**Include your video here.** (please see file final.mp4)
+**Include your video here.**
 
-<video src="final.mp4" controls width="600">
-</video>
+
+https://github.com/user-attachments/assets/40984168-67d9-4d99-a204-50072cbe0697
+
 
 **Please indicate who you collaborated with on this lab.** Be generous in
 acknowledging their contributions, and credit any other influences (YouTube,
