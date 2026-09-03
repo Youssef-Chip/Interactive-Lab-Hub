@@ -264,10 +264,12 @@ prototype are great too.**
 
 https://github.com/user-attachments/assets/3bf3c21c-925c-4ab8-b0b0-77b92e276f96
 
+Improvements:
+
+For our updated interaction, we made several key changes to improve the device and make the setting immediately clear.
+First, instead of using a phone, we used a much bigger screen to display the "On Air" light. We also smoothed out the visual transition of the light turning from off to bright red. To clearly show that this object is being used in a broadcast studio, we added an actor playing the role of a host holding a microphone. The new scene starts with background crowd noise, and then we hear a director shout, "We're going live in 3, 2, 1!" At the exact same time, the "On Air" light smoothly begins to turn on. The moment it is fully illuminated, there is absolute silence in the room, immediately followed by the host saying, "Welcome back to our show."
 
 ---
-
-
 
 
 
