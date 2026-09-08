@@ -261,6 +261,8 @@ your response engages with what your master was really doing.
 **Document everything here — especially the storyboard and video. Photos of the
 prototype are great too.**
 
+<img width="350" height="662" alt="Screenshot 2026-09-08 at 6 19 46 PM" src="https://github.com/user-attachments/assets/09ba0a8f-dced-4a43-b280-a7c178d5b41e" />
+
 
 https://github.com/user-attachments/assets/3bf3c21c-925c-4ab8-b0b0-77b92e276f96
 
