@@ -1,5 +1,6 @@
 # Interactive Prototyping: The Clock of Pi
 **NAMES OF COLLABORATORS HERE**
+Youssef Hassan (yh2443), Jonathan Tumalle (jrt285)
 
 Does it feel like time is moving strangely during this semester?
 
