@@ -196,6 +196,9 @@ We strongly discourage literal digital or analog clock display: Be creative.
 
 ** Insert ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf)), storyboards for your ideas **
 
+<img width="3595" height="2461" alt="clock_storyboard" src="https://github.com/user-attachments/assets/d0e3d398-2da1-42bc-89a2-9fa0b75bec6e" />
+
+The user looks at the screen and instantly knows where they are in the day by observing the position of the Sun or Moon relative to the horizon and the resulting color of the screen.
 
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
