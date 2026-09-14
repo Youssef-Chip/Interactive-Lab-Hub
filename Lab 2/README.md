@@ -203,6 +203,9 @@ The user looks at the screen and instantly knows where they are in the day by ob
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
 
+
+1- Sirapop Umnakkittikul & Feiyu Zhou: https://github.com/Morinzzz/Interactive-Lab-Hub
+
 # Lab 2 Part 2
 
 ## Prep 
@@ -211,6 +214,12 @@ The user looks at the screen and instantly knows where they are in the day by ob
 
 2. Look at and give feedback on the Part E. for at least 3 other people in the class and get 3 people to comment on your Part E!)
 **Put the feedback for your ideas here.**
+
+1- Sirapop Umnakkittikul:
+
+
+I really like how this concept brings nature into the clock. Seeing the Sun or Moon move across the screen relative to the horizon makes the whole experience feel warmer and more grounded. It creates a stronger sense of connection to the natural cycle of the day, rather than just reading abstract numbers. The way the position of the Sun or Moon changes based on the actual time of day is especially thoughtful. It’s not just a fixed or hard-coded placement, it genuinely reflects where those celestial bodies would be, which makes the design feel more intentional and immersive. Combined with the shifting screen colors, it lets the user instantly sense their place in the day in a calm, intuitive way.
+
 
 ## Update your Lab Hub
 
