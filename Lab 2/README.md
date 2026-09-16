@@ -206,6 +206,10 @@ The user looks at the screen and instantly knows where they are in the day by ob
 
 1- Sirapop Umnakkittikul & Feiyu Zhou: https://github.com/Morinzzz/Interactive-Lab-Hub
 
+2- Viktor Radev: https://github.com/LaboriouslyExquisite/Interactive-Lab-Hub/blob/Fall2026/Lab%202/README.md
+
+
+
 # Lab 2 Part 2
 
 ## Prep 
@@ -220,6 +224,10 @@ The user looks at the screen and instantly knows where they are in the day by ob
 
 I really like how this concept brings nature into the clock. Seeing the Sun or Moon move across the screen relative to the horizon makes the whole experience feel warmer and more grounded. It creates a stronger sense of connection to the natural cycle of the day, rather than just reading abstract numbers. The way the position of the Sun or Moon changes based on the actual time of day is especially thoughtful. It’s not just a fixed or hard-coded placement, it genuinely reflects where those celestial bodies would be, which makes the design feel more intentional and immersive. Combined with the shifting screen colors, it lets the user instantly sense their place in the day in a calm, intuitive way.
 
+
+2- Viktor Radev:
+
+Overall I like your design as it follows the idea of the coffee mug where for time tracking you would note when you last drank coffee to tell you how long before you should get another one assuming it's still day time outside. Instead of literally pasting the time you want to show the user the position of the moon and the earth in relation to their geo-spatial location to inform them whether or not the sun will be rising or setting to give them some idea as to what time of day it is. Instead of using time in the quantifiable sense, you will inform the user based on the sense of the heavenly bodies of the moon and the sun. Some things that I think might be a problem come up when we talk about individuals who are located far away from the equator, which is that they usually have daytime and night time for much longer than your typical 12hr day time and 12night time cycle. How could you include additional information in your program to account for this issue? Could giving them a countdown on when the moon and the sun be helpful information, so that they can plan around that, as apposed to just showing the moon and the suns position? Is there some way you could integrate how the cycle of time is changing for the person, such as showing them when the lunar and the summer solstice will occur? These are just a few things that come to mind just from seeing your Verplank design.
 
 ## Update your Lab Hub
 
