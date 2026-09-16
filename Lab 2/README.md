@@ -216,6 +216,10 @@ I think your storyboard for your second clock idea is much clearer and I was abl
 My feedback to Viktor: I think this is a fantastic design and a very creative way to make a clock very fun to use, which isn't something I thought I would need, but I'm glad you made it possible. I have 2 possible critiques, unless I misunderstood your storyboard: First one: who picks the suit for the hour, is it randomly decided or is the user picking it? If it's the latter, I think it could turn a bit tedious for the user eventually, if its the former, would it also be possible for the user to keep switching suits? Second one: since the items per spiderman only go up to 12, how would you tell the difference between AM and PM? Is it possible to make your storyboard a bit clearer to address these questions?
 
 
+3- Jonathan Tumalle: https://github.com/jontumalle/Interactive-Lab-Hub/blob/Lab2a/Lab%202/README.md
+
+My feedback to JT: I really like this idea for multiple reasons: first off, I learned that the ISS actually passes over 16 times a day, which I didn't know, and more impressively, that someone built an API for tracking it. This is why I think your clock design is very impressive because it's based on a real-time phenomenon that you can check for yourself if you are a stargazer. My only critique is I would make more panels in the storyboard showing more stages of what it would like when the ISS is passing and when the user is waiting for it.
+
 
 # Lab 2 Part 2
 
