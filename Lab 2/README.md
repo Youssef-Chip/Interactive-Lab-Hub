@@ -206,7 +206,14 @@ The user looks at the screen and instantly knows where they are in the day by ob
 
 1- Sirapop Umnakkittikul & Feiyu Zhou: https://github.com/Morinzzz/Interactive-Lab-Hub
 
+My feedback to them: I think the “Egg” is a very creative way to make a clock that measures a year and I really like the story that you gave to your character. However I do think if it weren’t for the text below your storyboard, I would’ve been a bit confused about how you were gonna make the clock measure a year. Additionally, I really love the Pomodoro timer option that you introduced, I think it’s a very useful feature that I would definitely use.
+
+
+I think your storyboard for your second clock idea is much clearer and I was able to understand how the clock works. My only feedback is that I would prefer to use your first clock just because the idea that the clock can speak might creep me out sometimes.
+
 2- Viktor Radev: https://github.com/LaboriouslyExquisite/Interactive-Lab-Hub/blob/Fall2026/Lab%202/README.md
+
+My feedback to Viktor: I think this is a fantastic design and a very creative way to make a clock very fun to use, which isn't something I thought I would need, but I'm glad you made it possible. I have 2 possible critiques, unless I misunderstood your storyboard: First one: who picks the suit for the hour, is it randomly decided or is the user picking it? If it's the latter, I think it could turn a bit tedious for the user eventually, if its the former, would it also be possible for the user to keep switching suits? Second one: since the items per spiderman only go up to 12, how would you tell the difference between AM and PM? Is it possible to make your storyboard a bit clearer to address these questions?
 
 
 
