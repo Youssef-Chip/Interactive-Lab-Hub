@@ -161,6 +161,10 @@ You can look in `image.py` for an example of how to display an image on the scre
 
 <img width="367" height="430" alt="Screenshot 2026-09-10 at 3 36 10 PM" src="https://github.com/user-attachments/assets/5bf568af-9b66-45ca-af39-4e202c2080b7" />
 
+
+<img width="577" height="526" alt="Screenshot 2026-09-19 at 2 07 25 PM" src="https://github.com/user-attachments/assets/52eb5d73-3919-4939-a47d-06394d89f42b" />
+
+
 ## Part D. 
 ### Set up the Display Clock Demo
 Work on `screen_clock.py`, try to show the time by filling in the while loop (at the bottom of the script where we noted "TODO" for you). You can use the code in `cli_clock.py` and `stats.py` to figure this out.
