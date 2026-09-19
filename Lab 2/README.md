@@ -244,6 +244,11 @@ I really like how this concept brings nature into the clock. Seeing the Sun or M
 
 Overall I like your design as it follows the idea of the coffee mug where for time tracking you would note when you last drank coffee to tell you how long before you should get another one assuming it's still day time outside. Instead of literally pasting the time you want to show the user the position of the moon and the earth in relation to their geo-spatial location to inform them whether or not the sun will be rising or setting to give them some idea as to what time of day it is. Instead of using time in the quantifiable sense, you will inform the user based on the sense of the heavenly bodies of the moon and the sun. Some things that I think might be a problem come up when we talk about individuals who are located far away from the equator, which is that they usually have daytime and night time for much longer than your typical 12hr day time and 12night time cycle. How could you include additional information in your program to account for this issue? Could giving them a countdown on when the moon and the sun be helpful information, so that they can plan around that, as apposed to just showing the moon and the suns position? Is there some way you could integrate how the cycle of time is changing for the person, such as showing them when the lunar and the summer solstice will occur? These are just a few things that come to mind just from seeing your Verplank design.
 
+
+3- Jonathan Tumalle
+
+I do like the animation for the sun and moon and making it intuitive on what it’s measuring. One thing that might be cool is for maybe it also knowing if you’re outside or not and give you a measure of vitamin D accumulated from the week if that’s possible. Gives user an incentive to go outside
+
 ## Update your Lab Hub
 
 [Update your Lab Hub](pull_updates/README.md) to get the latest content and requirements for Part 2.
