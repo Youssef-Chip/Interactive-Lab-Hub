@@ -270,7 +270,10 @@ Start small, pick just one element of your overall idea, just to show you have a
 
 
 
-https://github.com/user-attachments/assets/8f14c532-9354-4d4e-91dd-c1ea7d411ccf
+
+https://github.com/user-attachments/assets/846117ea-4d93-4bc1-9ba4-7267b49d3d7e
+
+
 
 
 This is a sped up version of the clock where 1 second => 1 hour. It starts at midnight.
@@ -312,13 +315,19 @@ Updated storyboard with the additional feature:
 
 
 
-https://github.com/user-attachments/assets/c418f87e-f76c-4f5f-8923-b07bb9732feb
+
+
+https://github.com/user-attachments/assets/61507958-fea1-4487-b2f0-8c9e36ce63ba
+
 
 This is a sped up version of the clock where 1 second => 1 hour. It starts at midnight.
 
 
 
-https://github.com/user-attachments/assets/80d10ea2-69fe-4e35-8d79-fe8170cbe299
+
+
+https://github.com/user-attachments/assets/dc6c6da7-56f8-4330-9387-8e7129b0ee3f
+
 
 This is a video of the clock working in real time, where the user can hold the button on "pin 23" to see what time it is.
 
