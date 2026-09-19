@@ -2,6 +2,8 @@
 **NAMES OF COLLABORATORS HERE**
 Youssef Hassan (yh2443), Jonathan Tumalle (jrt285)
 
+**Note: I didn't have my own Pi.**
+
 Does it feel like time is moving strangely during this semester?
 
 For our first Pi project, we will pay homage to the [timekeeping devices of old](https://en.wikipedia.org/wiki/History_of_timekeeping_devices) by making simple clocks.
@@ -265,6 +267,16 @@ Start small, pick just one element of your overall idea, just to show you have a
 
 \*\*\***Take a video of your barely modified PiClock.**\*\*\*
 
+
+
+
+https://github.com/user-attachments/assets/8f14c532-9354-4d4e-91dd-c1ea7d411ccf
+
+
+This is a sped up version of the clock where 1 second => 1 hour. It starts at midnight.
+
+
+
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
 
 ```
@@ -282,6 +294,14 @@ Do take advantage of having done the previous iteration to refine and simplify y
 ** Insert any updates ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf))!, storyboards for your ideas **
 
 
+
+Updated storyboard with the additional feature:
+
+<img width="671" height="537" alt="Screenshot 2026-09-19 at 2 27 22 PM" src="https://github.com/user-attachments/assets/773588b5-5a2c-4f22-8fab-b9dba2898351" />
+
+
+
+
 \*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
 
 
@@ -289,6 +309,19 @@ Do take advantage of having done the previous iteration to refine and simplify y
 
 
 \*\*\***Take a video of your PiClock.**\*\*\*
+
+
+
+https://github.com/user-attachments/assets/c418f87e-f76c-4f5f-8923-b07bb9732feb
+
+This is a sped up version of the clock where 1 second => 1 hour. It starts at midnight.
+
+
+
+https://github.com/user-attachments/assets/80d10ea2-69fe-4e35-8d79-fe8170cbe299
+
+This is a video of the clock working in real time, where the user can hold the button on "pin 23" to see what time it is.
+
 
 
 As always, make sure you document contributions and ideas from others (and AI) explicitly in your writeup.
