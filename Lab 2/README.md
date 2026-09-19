@@ -259,6 +259,8 @@ Start small, pick just one element of your overall idea, just to show you have a
 
 \*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
 
+**Please see ```barebone_clock.py```**
+
 ## Make a short video of your modified barebones PiClock
 
 \*\*\***Take a video of your barely modified PiClock.**\*\*\*
@@ -281,6 +283,10 @@ Do take advantage of having done the previous iteration to refine and simplify y
 
 
 \*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
+
+
+**Please see ```complete_clock.py```**
+
 
 \*\*\***Take a video of your PiClock.**\*\*\*
 
