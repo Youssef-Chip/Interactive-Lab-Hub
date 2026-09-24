@@ -109,7 +109,13 @@ The demo script also shows `--output-raw`, which streams audio to the speaker as
 \*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
 (This shell file should be saved to your own repo for this lab.)
 
+I chose Piper to greet me, please see file greet_me.sh inside the folder speech-scripts
+
 \*\***Then answer: Is the same greeting, in these different voices, the same greeting? Describe one concrete way the voice changed what the utterance seemed to mean or who seemed to be speaking.**\*\*
+
+Even though it's the same words, I would argue it's different greetings because the delivery matters a lot.
+In espeak, the greeting is fully robotic, while in Piper, the voice is more human, similar to what Siri sounds like.
+
 
 ## B. Speech to Text
 
@@ -131,7 +137,20 @@ Available sizes, smallest first: `tiny.en`, `base.en`, `small.en`, `medium.en`. 
 
 \*\***Record a few seconds of your own speech (`arecord -d 5 -f cd -c 1 -r 16000 test.wav`) and transcribe it with at least two model sizes. Report the real-time factor for each. At what point does the accuracy improvement stop being worth the delay, for a system that has to answer you?**\*\*
 
+I recorded "Hi, this is Youssed and I'm testing the transcription".
+The real-time factor for both models were:
+
+tiny.en: 0.25x
+
+base.en: 0.44x
+
+Both models were able to transcribe accuratley, but the bigger model took 2.18 seconds just to transcribe 5 seconds of audio, while the first one took 1.23 seconds. I think the accuracy improvement of larger models stops being worth it if the transcription takes more than 2 seconds, because then the interaction starts feeling like awkward communication.
+
+
 \*\***Write your own script that verbally asks for a numerical input (a phone number, zipcode, number of pets) and records the answer the respondent provides.**\*\* Numbers are a good stress test — transcription systems make characteristic errors on digit strings, and you will want to know what they are before you design around them.
+
+Please see speech-scripts/ask_number.sh
+
 
 ## C. Turn-taking: knowing when someone has stopped talking
 
@@ -152,6 +171,12 @@ Speak, pause, and watch it transcribe. Now change the endpointing threshold — 
 ```
 
 \*\***Try both extremes, and something in between. Describe what each one feels like to talk to. Note specifically: at 0.2s, what kinds of normal speech get cut off? At 1.5s, what does the delay make the system seem like?**\*\*
+
+
+At 0.2 seconds: If I pause to think, take a breath or just hesitate, the system will definitley break the thought into multiple pieces, so this could be very frustrating.
+
+
+At 1.5 seconds: Because the system waits 1.5 seconds of complete silence before it processes what you said, this interaction feels very awkward and slow, it feels like an uncomfortable long silence.
 
 There is no correct value. A system that takes drink orders and a system that listens to someone think out loud want very different thresholds, and the right one depends on what your users are doing with their pauses.
 
