@@ -215,12 +215,36 @@ Write out what you imagine the dialogue to be. Use cards, post-its, or whatever 
 
 Your script should include the pauses. Where does your device wait, and for how long? You now know from Part C that this is a parameter you have to choose, not something that happens for free.
 
+
+SCRIPT:
+
+User: "Load up Love's Sorrow by Rachmaninoff and give me feedback at the end."
+Device: "Loaded. I will wait until you finish. Ready when you are."
+[System State]: VAD threshold set to 2 seconds + the longest rest duration in the piece itself (it needs a long threshold so it doesn't cut the user off if they pause during the piece)
+
+[User plays the piece for a few minutes, then stops and takes hands off keys]
+[System State]: System waits many seconds.
+
+Device: "You slowed down the tempo at measure 149. Do you want to hear what you sounded like and what a perfect recording should sound like?"
+[System State]: VAD threshold lowered to 0.8 seconds to wait for a quick Yes/No.
+User: "Yes."
+[System State]: System waits 0.8 seconds, then plays both audios.
+
+(An hour later)
+User: "End practice here and save the best try as a reference."
+Maestro: "Saved. Good session today."
+
+
 ## E. Acting out the dialogue
+<details>
 
 Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing. Please record this interaction (for example, using Zoom's record feature).
+</details>
 
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
 
+
+Unfortunatley, the dialogue felt much messier than the written script. For example, in the script, waiting that many seconds after finishing the song for the device to process makes logical sense. But when acted out in real life, it meant sitting in silence for about 6 seconds. The user thought the device didn't hear them finish or that it's not working, and said "Did you hear me", which meant restarting the threshold again.
 
 ---
 
