@@ -1,5 +1,3 @@
-<img width="3530" height="2690" alt="IMG_1681" src="https://github.com/user-attachments/assets/839be809-b7f7-4759-ba07-532cdab5656f" />
-<img width="3530" height="2690" alt="IMG_1681" src="https://github.com/user-attachments/assets/83a32e15-1a6c-4991-8870-a9a2d9327ee7" />
 # Chatterboxes
 
 **NAMES OF COLLABORATORS HERE**
