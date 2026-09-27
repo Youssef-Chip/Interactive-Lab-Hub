@@ -2,6 +2,8 @@
 
 **NAMES OF COLLABORATORS HERE**
 
+<details>
+
 [![Watch the video](https://user-images.githubusercontent.com/1128669/135009222-111fe522-e6ba-46ad-b6dc-d1633d21129c.png)](https://www.youtube.com/embed/Q8FWzLMobx0?start=19)
 
 In this lab, we want you to design interaction with a speech-enabled device — something that listens and talks to you. This device can do anything *but* control lights (since we already did that in Lab 1). First, we want you to storyboard what you imagine the conversational interaction to be like. Then you will use wizarding techniques to elicit examples of what people might say, ask, or respond. We then want you to use the examples collected from at least two other people to inform the redesign of the device.
@@ -35,9 +37,11 @@ pi@ixe00:~/Interactive-Lab-Hub $ git push
 Option 2: On your own GitHub repo, create a pull request to get updates from the class Interactive-Lab-Hub. After you have the latest updates online, go to your Pi, `cd` to your `Interactive-Lab-Hub` and use `git pull`.
 
 ---
+</details>
 
 # Part 1
 
+<details>
 ## Setup
 
 Create and activate a virtual environment for this lab:
@@ -69,8 +73,10 @@ Then run the setup script, which installs the classic speech synthesizers, downl
 ```
 
 Check your audio devices before going further. `arecord -l` lists capture devices and `aplay -l` lists playback devices; if your webcam microphone or Bluetooth speaker does not appear, fix that first — every script below assumes the system defaults are the ones you want.
+</details>
 
 ## A. Text to Speech
+<details>
 
 Your Pi can speak in several quite different ways, and the differences are audible in a way that matters for design. In `speech-scripts/` there are shell scripts for each.
 
@@ -105,6 +111,7 @@ Note that the Piper command line changed in version 1.x — voices are now downl
 ```
 
 The demo script also shows `--output-raw`, which streams audio to the speaker as it is generated rather than writing a file first. Listen for the difference in how quickly speech begins. In a conversational system this gap is the thing your user experiences as responsiveness.
+</details>
 
 \*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
 (This shell file should be saved to your own repo for this lab.)
@@ -118,7 +125,7 @@ In espeak, the greeting is fully robotic, while in Piper, the voice is more huma
 
 
 ## B. Speech to Text
-
+<details>
 We use [faster-whisper](https://github.com/SYSTRAN/faster-whisper), a reimplementation of OpenAI's Whisper model that runs several times faster on CPU and does not require PyTorch. All processing happens on the Pi; nothing is sent to a server.
 
 ```
@@ -134,6 +141,7 @@ The transcript is not the interesting output here — the timings are. Run it ag
 ```
 
 Available sizes, smallest first: `tiny.en`, `base.en`, `small.en`, `medium.en`. The `.en` variants are English-only and faster than their multilingual counterparts at the same size.
+</details>
 
 \*\***Record a few seconds of your own speech (`arecord -d 5 -f cd -c 1 -r 16000 test.wav`) and transcribe it with at least two model sizes. Report the real-time factor for each. At what point does the accuracy improvement stop being worth the delay, for a system that has to answer you?**\*\*
 
@@ -153,6 +161,7 @@ Please see speech-scripts/ask_number.sh
 
 
 ## C. Turn-taking: knowing when someone has stopped talking
+<details>
 
 Everything so far has worked on fixed audio files. A real conversational device does not get told when to start and stop recording — it has to decide. This is the problem that makes speech interfaces hard, and it is mostly not a speech recognition problem.
 
@@ -169,6 +178,7 @@ Speak, pause, and watch it transcribe. Now change the endpointing threshold — 
 (.venv) $ python listen.py --min-silence 0.2
 (.venv) $ python listen.py --min-silence 1.5
 ```
+</details>
 
 \*\***Try both extremes, and something in between. Describe what each one feels like to talk to. Note specifically: at 0.2s, what kinds of normal speech get cut off? At 1.5s, what does the delay make the system seem like?**\*\*
 
@@ -179,6 +189,7 @@ At 0.2 seconds: If I pause to think, take a breath or just hesitate, the system 
 At 1.5 seconds: Because the system waits 1.5 seconds of complete silence before it processes what you said, this interaction feels very awkward and slow, it feels like an uncomfortable long silence.
 
 There is no correct value. A system that takes drink orders and a system that listens to someone think out loud want very different thresholds, and the right one depends on what your users are doing with their pauses.
+<details>
 
 ### The complete loop
 
@@ -187,6 +198,7 @@ There is no correct value. A system that takes drink orders and a system that li
 ```
 (.venv) $ python echo_bot.py
 ```
+</details>
 
 ## D. Storyboard
 
