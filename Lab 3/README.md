@@ -1,3 +1,5 @@
+<img width="3530" height="2690" alt="IMG_1681" src="https://github.com/user-attachments/assets/839be809-b7f7-4759-ba07-532cdab5656f" />
+<img width="3530" height="2690" alt="IMG_1681" src="https://github.com/user-attachments/assets/83a32e15-1a6c-4991-8870-a9a2d9327ee7" />
 # Chatterboxes
 
 **NAMES OF COLLABORATORS HERE**
@@ -205,6 +207,9 @@ There is no correct value. A system that takes drink orders and a system that li
 Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stuck? Make a device that talks for dogs. If that is too stupid, find an application that is better than that.)
 
 \*\***Post your storyboard and diagram here.**\*\*
+
+<img width="3530" height="2690" alt="IMG_1681" src="https://github.com/user-attachments/assets/ac2c07d3-b72a-4275-958c-f0c5f3529b36" />
+
 
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses.
 
