@@ -312,6 +312,14 @@ The Controller: The "Wizard" sits in the background, SSH'd into the Pi via a lap
 
 *Include videos or screencaptures of both the system and the controller.*
 
+<img width="4031" height="2786" alt="IMG_1697 (1)" src="https://github.com/user-attachments/assets/1eda4eb4-ea29-4d2d-9368-016d6588ddc0" />
+
+<img width="4031" height="2089" alt="IMG_1703 (1)" src="https://github.com/user-attachments/assets/30bdb128-e89d-42f9-b905-71daebf60c89" />
+
+
+<img width="2147" height="1611" alt="IMG_1699 (1)" src="https://github.com/user-attachments/assets/9c716da7-ba5b-4d3b-8e49-ba0635866e77" />
+
+
 
 
 ## Test the system
