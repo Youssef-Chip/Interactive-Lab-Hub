@@ -255,9 +255,41 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings.
+
+
+The main improvement is eliminating Voice Activity Detection (VAD) silence thresholds for conversation. Relying on a timer creates awkwardness and it causes the system to accidentally interrupt the user if they pause to read sheet music.
+
 2. What are other modes of interaction *beyond speech* that you might also use to clarify how to interact? In particular: how does someone know when the device is listening, and when it is thinking? You have a screen and an LED.
+
+
+- Use of MIDI (Musical Instrument Digital Interface): This is a digital language that lets electronic instruments communicate with software. The device will continuously "listen" to the piano via a silent MIDI data stream connected via a USB cable. It tracks every note in the background without needing a voice command to start recording.
+
+
+- Physical Push-to-Talk: An additional foot pedal connected to the device acts as a gate, meaning the microphone only turns on when the pedal is held. This solves acoustic interference and turn-taking ambiguity. The user presses the voice pedal to give instructions to the device.
+
+
+- LED Status Light: An LED light on the device indicates the system's status: Solid Green (Monitoring MIDI), Red (Microphone Active / Listening to Voice), Blinking Blue (Processing / Thinking), and Solid Blue (Device is speaking/answering).
+
+
 3. Make a new storyboard, diagram and/or script based on these reflections.
+
+[System State]: LED is Solid Green. System is silently monitoring MIDI input.
+[User plays a section, stops playing, and presses and holds the foot pedal]
+[System State]: LED turns Red. Microphone activates.
+User: "How was my timing on that last 10 measures?"
+[User releases pedal]
+[System State]: LED turns Blinking Blue. Microphone mutes. System is thinking.
+Device: "You rushed the arpeggios in measure 12. Want to hear the reference track again?"
+[System State]: LED returns to Solid Green.
+User: (Presses pedal) "Yes." (Releases pedal).
+[System State]: LED turns Solid Blue while playing audio.
+
+
+<details>
 4. (optional) Integrate [input devices](inputs.md) in the system
+</details>
+
+<details>
 
 ## Prototype your system
 
@@ -265,28 +297,49 @@ The system should:
 * use the Raspberry Pi
 * use one or more sensors
 * require participants to speak to it
+</details>
 
 *Document how the system works.*
 
+As seen in the first two pictures below, the user sits down to play the piano and puts on their headphones. They have the sustain pedal (on the right) used for playing, and the secondary foot pedal (on the left), which is used as a push-to-talk button. On top of the piano, there is an LED light to indicate the status of the system. These are the only components the user interacts with.
+
+
+The System: The Raspberry Pi is equipped with a USB microphone and a speaker. It is connected to the piano via USB for the MIDI input, connected to the left foot pedal as a push-button to activate the microphone, and connected to the LED light.
+
+
+The Controller: The "Wizard" sits in the background, SSH'd into the Pi via a laptop. When the user finishes playing, they press the pedal with their foot to speak to the system, and the wizard answers back. To simulate the answers, I press a corresponding number key on my laptop (e.g., 1 triggers Piper TTS to say "You rushed the tempo", 2 triggers "Want to hear the reference?"...).
+
+
 *Include videos or screencaptures of both the system and the controller.*
 
+
+
 ## Test the system
+<details>
 
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard *after* the interaction, but we recognize that can be hard.)
+</details>
 
 Answer the following:
 
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
+
+The pedal push-to-talk worked really well. It completely removed the awkward silence of waiting for the system to realize the user was done speaking, and the LED state changes immediately validated the user's input. What didn't work well was when the user decided to play without headphones. Without headphones, the piano's acoustic sound blends directly into the open microphone when the user tries to talk, which causes audio interference.
+
 
 ### What worked well about the controller and what didn't?
-\*\**your answer here*\*\*
+
+Using pre-mapped hotkeys for TTS responses worked very well and allowed the system to react instantly. What failed was handling unexpected questions. When the user asked an unscripted question, it took much longer for the TTS to answer since I (the wizard) had to manually type it out, which broke the conversational flow.
+
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
-\*\**your answer here*\*\*
+
+I learned that relying on an open microphone to capture both voice commands and piano audio fails due to acoustic interference and unpredictable VAD silence thresholds. Separating the inputs, using a push-to-talk button for voice commands and a continuous MIDI data stream to track the actual piano playing, works perfectly. I also learned the importance of having an LED light status check to let the user know the system's state. Finally, when developing an actual autonomous system, I need to program fallback responses (or filler phrases like "Let me check...") to handle unexpected questions while it processes.
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
-\*\**your answer here*\*\*
+
+I could use this system to track the exact duration between a user making a musical mistake (detected silently via the continuous MIDI stream) and pressing the voice pedal to ask for help. This dataset could train a model to recognize when a student genuinely needs help versus just pausing to take a breath or turn a page. The core sensing modality that makes this entire system viable is direct MIDI capture via USB, which provides accurate music data rather than relying on microphone audio.
+
 
 <details>
   <summary><strong>Submission Cleanup Reminder (Click to Expand)</strong></summary>
