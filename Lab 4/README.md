@@ -15,6 +15,7 @@
 ---
 
 ---
+<details>
 
 ## Lab Overview
 Team: <canvas group name>  
@@ -282,12 +283,33 @@ Your kit includes these [SparkFun Qwiic OLED screens](https://www.sparkfun.com/p
 
 
 As you develop your Feast Automata concept, consider where the sensor and actuator need to be placed, what parts move, how electronics are housed, and how the overall form and aesthetics support the interaction.
+</details>
+
 
 **\*\*\*Draw 5 sketches that explore different physical arrangements for your sensing and actuation.\*\*\***
 
+<img width="4032" height="3024" alt="IMG_1732" src="https://github.com/user-attachments/assets/cedd36d2-a873-4777-8659-116baf873ca7" />
+
+<img width="4032" height="3024" alt="IMG_1733" src="https://github.com/user-attachments/assets/ac15a543-02fe-45f1-8806-4ed84e2f3a4d" />
+
+
+
+
 **\*\*\*What questions do these sketches raise? What do you need to physically prototype to answer them?\*\*\***
 
+- Is the servo strong enough to lift, rotate, or push these objects?
+
+- How do I securely attach cardboard to the servo arms without it slipping?
+
+- Will the cardboard structures stay stable when the motor makes sudden movements?
+
+- Does the motor have enough speed and friction to perform tasks like fanning air or sliding a napkin?
+
+To answer these questions, I need to test the motor by placing my phone or other weights on it. I also need to build a basic cardboard base to see if the structure tips over during movement. Finally, I need to test different tapes or glues to find the strongest way to attach the moving parts.
+
 **\*\*\*Pick one design to prototype and explain why.\*\*\***
+
+I am choosing Sketch 1: The Ad-Blocker Lazy Susan. I am picking this because it is something I am actually passionate about. I usually watch shows while eating, and YouTube ads have become increasingly annoying. This device rotates the phone away whenever an ad plays, which is my way of rebelling against the ads.
 
 Build a cardboard or other low-fidelity physical prototype of your design.
 
