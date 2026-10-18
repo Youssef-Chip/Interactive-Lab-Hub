@@ -331,6 +331,7 @@ Following exploration and reflection from Part 1, complete the "looks like," "wo
 ### Part E
 
 #### Build & Integrate: Sensing + Actuation
+<details>
 
 For Part 2, build the Feast Automata interaction you developed in Part D by connecting sensing/input to physical actuation.
 
@@ -507,18 +508,60 @@ This is a playful way to visualize how the expander works, but the same techniqu
 ---
 
 ---
+</details>
 
 ### Part F
 
 ### Final Documentation
 
+<details>
+
 Document all the prototypes and iterations you have designed and worked on! Again, deliverables for this lab are writings, sketches, photos, and videos that show what your prototype:
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
 * "Works like": shows what the device can do
 * "Acts like": shows how a person would interact with the device
+</details>
+
+
+**Interaction Overview**
+
+The "Ad-Blocker Lazy Susan" uses a Qwiic Button to physically turn a smartphone away to face the wall when a YouTube ad plays. The user presses the physical button to hide the screen, which lets them easily ignore the ad until they are ready to press the button again to bring the phone back to its original position.
+
+**System Sketch**
+
+<img width="2956" height="1937" alt="system_sketch" src="https://github.com/user-attachments/assets/458b3a04-a4ff-48fd-aab7-3d0dc29f5d4a" />
+
+
+**Sensing + Actuation Code**
+
+Please see ```lazy_susan.py``` for the code controlling the interaction and ```lab4.gcode.3mf``` which is the sliced file of the 3d printed components I used.
+
+<img width="2880" height="1800" alt="3d printed components" src="https://github.com/user-attachments/assets/f915c81e-963e-4b91-bcc3-e97136a6cd51" />
+
+
+**Media Demonstration (Looks, Works, and Acts Like)**
+
+
+https://github.com/user-attachments/assets/3359294b-a46a-4ede-b6d6-44ec42a6816b
+
+
+**Reflection**
+
+What I learned & what was challenging: 
+
+I had to figure out if the small motor could handle the weight and size of my iPhone 13 Mini. Since the phone is only 141 grams, I learned the motor had enough power as long as the weight was centered. I chose an 80mm circular platform because it was big enough to balance the phone perfectly. Originally, I planned to print the platform and the servo horn as separate pieces. I decided to digitally fuse them together in Bambu Studio instead to make the structure much more stable. It was challenging to align their heights correctly before merging them. Because I fused them into one solid piece, I accidentally covered the center screw hole and had to rely on a tight friction fit to attach the platform to the motor.
+
+
+How the input shapes the physical response: 
+
+Using a physical button gives the user direct control over the phone's movement. Instead of an automated sensor, the user decides exactly when to press the button to turn the phone away.
+
+Thresholds, Timing, & Movement: 
+
+The first version of the code snapped the servo instantly, which moved too fast and risked throwing the phone off the platform. I fixed this by using a for loop with a 0.02-second delay to slow down the rotation into a smooth sweep. I also found out the SG90 micro-servo cannot always hit exactly 180 degrees, so I had to iteratively calibrate the starting and stopping angles to match the hardware's actual limits.
 
 ---
-
+<details>
 ## Deliverables \& Submission for Lab 4
 
 The deliverables for this lab are, writings, sketches, photos, and videos that show what your prototype:
@@ -530,3 +573,5 @@ For submission, the readme.md page for this lab should be edited to include the 
 * Upload any materials that explain what you did, into your lab 4 repository, and link them in your lab 4 readme.md.
 * Link your Lab 4 readme.md in your main Interactive-Lab-Hub readme.md. 
 * Labs are due on Mondays, make sure to submit your Lab 4 readme.md to Canvas.
+</details>
+
