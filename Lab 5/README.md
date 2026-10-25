@@ -1,4 +1,5 @@
 # Observant Systems: Overnight Sensation
+<details>
 
 **Team:**
 
@@ -63,6 +64,7 @@ Please check the instructions in [prep.md](prep.md) and complete them before lab
 ## The Report
 
 This readme.md page in your own repository should be edited to include the work you have done. You can delete everything but the headers and the sections between the \*\*\***stars**\*\*\*. Write the answers to the questions under the starred sentences. Include any material that explains what you did in this lab hub folder, and link it in the readme.
+</details>
 
 ---
 
@@ -70,6 +72,7 @@ This readme.md page in your own repository should be edited to include the work 
 
 ## Part A. 
 ### Set up your Pi for on-device AI
+<details>
 
 Create a virtual environment and install the requirements. They include `ultralytics` (YOLO), which pulls in torch, so this takes a while:
 
@@ -133,12 +136,15 @@ pi@raspberrypi:~ $ ollama list
 |---|---|---|
 | `qwen3.5:0.8b` | ~1.3 GB | text **and images**; the one we use in this lab |
 | `qwen3:0.6b` | ~0.5 GB | text only, smaller and faster (~16 tokens/s on a Pi 5) |
+</details>
 
 \*\*\***Include a screenshot of `ollama list` showing your models.**\*\*\*
 
+<img width="894" height="154" alt="ollama list" src="https://github.com/user-attachments/assets/089899ce-0efb-430c-9bb3-939d7f5970ff" />
 
 ## Part B. 
 ### See: recognize people in real time with YOLO
+<details>
 
 YOLO is an *object detector*: it finds every person, cup, cat and so on (the 80 [COCO](https://cocodataset.org/) classes), draws a box around each, and gives a confidence. For an observant system that is exactly what you want: *how many*, *where*, *how sure*.
 
@@ -158,13 +164,44 @@ Then press q to quit and run it again with a flag. Each one changes a single thi
 (.venv) pi@raspberrypi:~/Interactive-Lab-Hub/Lab 5 $ python yolo_person.py --all          # all 80 classes, not only people: what else is on your desk, and what does it get wrong?
 (.venv) pi@raspberrypi:~/Interactive-Lab-Hub/Lab 5 $ python yolo_person.py --headless     # no window, only the printed readings: how it runs over ssh, and at night
 ```
+</details>
 
 \*\*\***Include a short video or screenshots of your experiments with the person detection. Write down three situations where it did not see you, or saw a person who was not there, and what you think the cause was.**\*\*\*
+
+Baseline:
+
+<img width="2880" height="1339" alt="baseline" src="https://github.com/user-attachments/assets/736156b3-5944-4a0d-b592-eed62ddf2e87" />
+
+Bar Lowered:
+
+<img width="2880" height="1556" alt="low confidence" src="https://github.com/user-attachments/assets/0bfc14bb-07b9-43b1-8291-4cbf90761842" />
+
+Bar Raised:
+
+<img width="2877" height="1556" alt="higher confidence" src="https://github.com/user-attachments/assets/3509c0f2-1a45-4a42-b297-32decb32b583" />
+
+Predict all 80 classes:
+
+<img width="2880" height="1560" alt="multi prediction" src="https://github.com/user-attachments/assets/4234c6e1-0a8b-40a6-a69d-62fdbfd92a38" />
+
+Headless Mode:
+
+<img width="2874" height="1560" alt="headless" src="https://github.com/user-attachments/assets/b1a15789-7644-4581-8834-b504c1597fbe" />
+
+
+- **Low Confidence False Positives:** When I lowered the confidence threshold and raised my hand, YOLO drew two boxes around my hand and one around me, and identified 3 people. The box around my hand had a higher confidence score than my face. This happened only when I lowered the threshold, which forces the model to guess on weak shape matches. A hand with spread fingers might share edges or angles with a distant person's limbs, so the model over-predicts.
+
+
+- **Poor Lighting Misses:** When I turned off the main room lights, the model completely lost my bounding box and failed to see me. This happened because YOLO relies on pixel contrast and edge detection to recognize human features. Bad lighting destroys that contrast.
+
+
+- **Posture Misses:** When I turned my body completely sideways and slouched in my chair, the bounding box disappeared. This happened because the model is trained mostly on standard human silhouettes like standing or walking, meaning it failed to recognize the pattern I did.
 
 
 
 ## Part C. 
 ### See more: hands and pose with MediaPipe
+<details>
 
 YOLO tells you that a person is there. Google's [MediaPipe](https://mediapipe.dev/) tells you what their hands and body are doing: face, hand and body pose detection, fast on the Pi.
 
@@ -186,12 +223,25 @@ Connect your webcam, connect to your Pi through **VNC**, and run the hand pose s
 Try the two main features of this script: 1) pinching for percentage control (the thumb-to-index distance sets the volume), and 2) "[Quiet Coyote](https://www.youtube.com/watch?v=qsKlNVpY7zg)" for instant percentage setting (the gesture mutes it). Notice how this example uses hardcoded positions and relates those positions with a desired set of events, in `hand_pose.py`: a hand is 21 landmark coordinates, and an *event* is a rule you write over them. That is the same job as `interpret()` in Part E.
 
 Consider how you might use this position based approach to create an interaction, and write how you might use it on either face, hand or body pose tracking.
+</details>
 
 \*\*\***Include a screenshot or short video of the hand pose demo, and write how you might use face, hand or body pose tracking in your observant system.**\*\*\*
+
+<img width="2880" height="1561" alt="volume control" src="https://github.com/user-attachments/assets/5ca4d4b6-5da7-4b79-ae84-b3e45b216ec9" />
+
+
+<img width="2866" height="1558" alt="quiet coyote" src="https://github.com/user-attachments/assets/e68faf6a-4ede-4a18-bcb5-2a9ee5b2afb2" />
+
+
+I would use body pose tracking to monitor sleep quality by counting how many times I tossed and turned in bed based on shoulder and hip positions.
+
+
 
 
 ## Part D. 
 ### Reason: run Qwen on the Pi with Ollama
+
+<details>
 
 Talk to the model in the terminal first. Qwen3 models "think" before they answer, which is slow on a Pi, so turn it off. Then ask about something you can check:
 
@@ -219,16 +269,36 @@ Things in the [Ollama API](https://github.com/ollama/ollama/blob/main/docs/api.m
 * `images` sends a photo along with the prompt (`--image snap.jpg`, the photo from Part A). `qwen3.5:0.8b` can look at pictures.
 
 A 0.8B model is slow and sometimes wrong. It will invent events that are not in the data and agree with a wrong premise. Give it the data, keep its job narrow, and decide what the device does when the model is unsure.
+</details>
 
 \*\*\***Ask Qwen three questions to answer. Paste the questions, the answers and how long each took. Try one of them with `qwen3:0.6b` and compare.**\*\*\*
 
-<details>
-  Q&A here
-</details>
+```
+pi@rpi:~/Interactive-Lab-Hub/Lab 5 $ python ask_qwen.py "Do I need to be high in order to understand Neongenesis evangelion?"
+No, you do not need to be high school or college student to understand *Neon Genesis Evangelion*. The series is accessible to anyone with curiosity about the concept of self-identity and psychological trauma.
+
+[qwen3.5:0.8b, 17.1 s]
+
+
+pi@rpi:~/Interactive-Lab-Hub/Lab 5 $ python ask_qwen.py --model qwen3.5:0.8b --image a_winter_story.jpg "Describe what is happening in this photo"
+Three band members play instruments on stage while the drummer plays drums with intense focus. The scene captures a live performance, likely from an anime or manga work.
+
+[qwen3.5:0.8b, 19.1 s]
+
+
+pi@rpi:~/Interactive-Lab-Hub/Lab 5 $ python ask_qwen.py --model qwen3:0.6b "Do I need to be high in order to understand Neongenesis evangelion?"
+No, understanding Neongenesis is not dependent on being high. It's a story about personal growth and self-discovery, not about physical strength. Thekey is to embrace your own path and focus on what truly matters to you.
+
+[qwen3:0.6b, 11.7 s]
+```
+
+Both models missed the joke about being "high" and misunderstood the word. The 0.8b model assumed I meant being a "high school" student, while the 0.6b model incorrectly implied it meant "physical strength." Despite this, both models understood what show I was referring to and correctly identified its core themes of psychological trauma and self-discovery. The 0.6b model was much faster (it answered the same text prompt in 11.7 seconds compared to the 0.8b model's 17.1 seconds). The 0.8b model successfully processed the image prompt in 19.1 seconds. It accurately described the band members and the drummer, and successfully recognized that the screenshot was from an anime, which is impressive for a small local model.
+
 
 
 ## Part E. 
 ### Connect: from YOLO readings to Qwen reasoning
+<details>
 
 An observant system is a pipeline: a **detector** turns pixels into boxes, an **interpreter** turns boxes into readings in words ("one person, left, close"), the readings pile up in a **log**, and a **reasoner** answers a question about the log. The language model never sees pixels, only the words you chose in the interpreter. That makes the interpreter the most important design decision in the system.
 
@@ -258,6 +328,7 @@ asking Qwen...
 Qwen (18.4 s):
 One person came in from the right, moved close to the camera, and left after about half a minute. ...
 ```
+</details>
 
 ---
 
