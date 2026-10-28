@@ -333,6 +333,7 @@ One person came in from the right, moved close to the camera, and left after abo
 ---
 
 # Lab 5 Part 2: Overnight Sensation
+<details>
 
 For Part 2, you will use the observant system from Part 1 to design a night-time interaction. On-device AI is slow, so let it work while you sleep. The person meets the device twice: **before bed**, when they hand the night over, and **when awake**, when the device gives something back. In between, the pipeline from Part E runs on its own.
 
@@ -342,9 +343,11 @@ Two flavors, pick one or mix them:
 * **Process all night.** You already have the data (a day of phone photos, a long recording) and the Pi needs hours to get through it.
 
 Two house rules. Sample rather than stream: one look every 5 to 30 seconds is plenty, and it keeps the Pi cool. And keep everything on the Pi: tell the people you live with, point the camera at things rather than at beds, and delete the snapshots after the demo.
+</details>
 
 ## Part F. 
 ### Read Part 2 and storyboard your night-time interaction
+<details>
 
 Storyboard a night-time interaction built on your observant system, in three panels:
 
@@ -355,8 +358,12 @@ Storyboard a night-time interaction built on your observant system, in three pan
 Stuck? A kitchen that tells you who raided the fridge. A desk that reports whether you actually went to bed. A window that names the quietest hour. A plant that describes its night. Find something better.
 
 Use storyboards and/or [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf).
+</details>
 
 \*\*\***Insert ideas, sketches, Verplank diagrams and storyboards for your night-time interaction here.**\*\*\*
+
+
+<img width="4031" height="2633" alt="IMG_1764" src="https://github.com/user-attachments/assets/2a9049b4-7d66-43a2-925d-d015de663db9" />
 
 ## Prep for Part 2
 
