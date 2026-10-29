@@ -366,21 +366,48 @@ Use storyboards and/or [Verplank diagrams](https://ccrma.stanford.edu/courses/25
 <img width="4031" height="2633" alt="IMG_1764" src="https://github.com/user-attachments/assets/2a9049b4-7d66-43a2-925d-d015de663db9" />
 
 ## Prep for Part 2
-
+<details>
 1. Look at and give feedback on the Part F storyboards.
    **Put the feedback for your ideas here.**
 2. [Update your Lab Hub](prep.md#get-the-latest-content) to get the latest content for Part 2.
 3. Decide where the device will spend the night and who else lives there. Get their OK before the first run.
 4. Revise your storyboard with the feedback and with what you learned in Part E about where the pipeline breaks.
+</details>
+
+
+Feedback received:
+
+- I like the idea so much because I usually wake up a lot while sleeping and sometimes I don't realize if I woke up because of surrounding noise or not.
+  
+- Reading the report from a small and bright screen, especially upon waking up, is unpleasant. It would be better if pressing the button would allow the user to hear a voice report instead.
+
+- Since the microphone will track everything, it would be good to experiment with specific decibel thresholds to filter out low level noise.
+
 
 \*\*\***Post your revised storyboard here.**\*\*\*
+
+<img width="2304" height="1501" alt="IMG_1767" src="https://github.com/user-attachments/assets/cfb527f5-a080-482f-98f6-321008bd9ce9" />
+
 
 ## Part G. 
 ### Design the interaction before
 
+<details>
 The hand-off: the person tells the device what to watch tonight, and the device acknowledges it. Keep it to a thirty-second ritual. A button or a touch (Lab 4), a spoken sentence (Lab 3), a wave or a Quiet Coyote at the camera (Part C). The acknowledgement can be a line on the display, a tone, or an LED that dims rather than lights up. At its simplest, the hand-off just sets the question that the morning will answer.
+</details>
 
 \*\*\***Describe the interaction before.**\*\*\*
+
+I connect a physical LED button to the Raspberry Pi's GPIO pins. Before going to sleep, I press the button to tell the system to start monitoring the microphone.
+
+The device acknowledges the hand-off in two ways:
+
+- The glowing LED inside the button dims.
+
+- The Mini PiTFT screen briefly displays "System Active. Goodnight!".
+
+This interaction takes less than five seconds and explicitly starts the night-time logging script.
+
 
 ## Part H. 
 ### Incorporate the observant system
