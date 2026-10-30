@@ -398,26 +398,19 @@ The hand-off: the person tells the device what to watch tonight, and the device 
 
 \*\*\***Describe the interaction before.**\*\*\*
 
-I connect a physical LED button to the Raspberry Pi's GPIO pins. Before going to sleep, I press the button to tell the system to start monitoring the microphone.
-
-The device acknowledges the hand-off in two ways:
-
-- The glowing LED inside the button dims.
-
-- The Mini PiTFT screen briefly displays "System Active. Goodnight!".
-
-This interaction takes less than five seconds and explicitly starts the night-time logging script.
+I connect a physical LED button to the Raspberry Pi's GPIO pins. Before going to sleep, I press the button to tell the system to start monitoring the microphone. The device acknowledges the hand-off because the glowing LED inside the button dims. This interaction takes less than five seconds and explicitly starts the night-time logging script.
 
 
 ## Part H. 
 ### Incorporate the observant system
-
+<details>
 The Part E pipeline becomes the night shift. `overnight.py` runs your `interpret()` from `yolo_to_qwen.py` every few seconds, people only unless you pass `--all`, and writes the readings to `night_log.jsonl`; the reasoning waits for the morning. Start it inside `tmux` so it keeps running after you close your laptop, and stop it with Ctrl-C in the morning:
 
 ```
 (.venv) pi@raspberrypi:~/Interactive-Lab-Hub/Lab 5 $ tmux new -s night
 (.venv) pi@raspberrypi:~/Interactive-Lab-Hub/Lab 5 $ python overnight.py
 ```
+</details>
 
 Fake a night first: run it for thirty seconds while you walk around, stop it, and run `morning.py` from Part I. When that looks right, run a real night. If your storyboard needs a sensor rather than the camera, swap in the Lab 4 example code and log its reading the same way.
 
@@ -439,6 +432,7 @@ https://github.com/user-attachments/assets/928bded6-eced-4557-8b9e-1aaa1577ca8b
 
 ## Part I. 
 ### Design the interaction after
+<details>
 
 The reveal. The night produced a log; the morning turns it into something a half-awake person can take in. `morning.py` is the smallest version: it asks Qwen for a three-sentence report.
 
@@ -447,16 +441,28 @@ The reveal. The night produced a log; the morning turns it into something a half
 ```
 
 Make it yours: show the report on the Mini PiTFT, read it aloud with Piper from Lab 3, plot the night as a timeline, or ask for JSON (`--json`, Part D) and move a servo. Whatever you pick, make sure it is honest about a night in which nothing happened.
+</details>
 
 ## Final documentation
+<details>
 
 Document all the prototypes and iterations you have designed and worked on. The deliverables for this lab are writings, sketches, photos, and videos that show what your system:
 
 * "Looks like": how the device sits in the room at night, and what it looks like at bedtime and in the morning.
 * "Works like": the pipeline from detector to interpreter to log to reasoner, with a real night's data.
 * "Acts like": how a person hands the night over and what they get back.
+</details>
 
 \*\*\***Include a short video of the whole system**\*\*\*
+
+
+https://github.com/user-attachments/assets/20818f8d-409d-4340-b5d0-b8493f8a87c9
+
+**Included Files:** Please see the sleep_tracker.py for the fully functioning script and audio_log.jsonl for the raw decibel spike data captured during the overnight run.
+
+
+
+<details>
 
 As always, make sure you document contributions and ideas from others (and AI) explicitly in your writeup.
 
@@ -476,4 +482,5 @@ For submission, the readme.md page for this lab should be edited to include the 
   - Remove all instructional text and example prompts from this file.
   - You may either delete these sections or use the toggle/hide feature in VS Code to collapse them for a cleaner look.
   - Your final submission should be neat, focused on your own work, and easy to read for grading.
+</details>
 </details>
