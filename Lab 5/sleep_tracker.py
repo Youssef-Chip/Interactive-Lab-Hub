@@ -45,8 +45,7 @@ def audio_callback(indata, frames, time_info, status):
     if volume > THRESHOLD:
         now = datetime.datetime.now().isoformat(timespec="seconds")
         print(f"Spike detected! {volume:.1f} dB at {now}")
-        write_log({"t": now, "event": "restless_spike",
-                  "volume": round(volume, 1)})
+        write_log({"t": now, "volume": round(volume, 1)})
 
 
 stream = sd.InputStream(callback=audio_callback)
