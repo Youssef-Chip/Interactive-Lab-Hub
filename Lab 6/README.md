@@ -184,8 +184,8 @@ Replace this README with your documentation:
 - **User Experience:**: Players stand side-by-side, with the colored objects on the table, watching a central screen. They have to read the command, process whether it is a fake-out, and be the first to take the colored object from the table to the sensor before the other person.
 
 **2. Architecture Diagram**
-- Hardware, connections, data flow
-- Label input/computation/output
+
+<img width="2010" height="1079" alt="IMG_1813" src="https://github.com/user-attachments/assets/58ba4695-aa20-480f-8f7b-c6953886f57f" />
 
 **3. Build Documentation**
 - Photos of each Pi + sensors
