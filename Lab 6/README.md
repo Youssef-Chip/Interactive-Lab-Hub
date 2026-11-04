@@ -8,8 +8,6 @@ Yuqi Wang (yw2897)
 
 Youssef Hassan (yh2443)
 
-For submission, replace this section with your documentation!
-
 ---
 <details>
 
