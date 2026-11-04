@@ -1,6 +1,12 @@
 # Distributed Interaction
 
-**NAMES OF COLLABORATORS HERE**
+**TEAM**
+
+Jerry D. Lee (jdl344)
+
+Yuqi Wang (yw2897)
+
+Youssef Hassan (yh2443)
 
 For submission, replace this section with your documentation!
 
