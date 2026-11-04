@@ -11,6 +11,7 @@ Youssef Hassan (yh2443)
 For submission, replace this section with your documentation!
 
 ---
+<details>
 
 ## Prep
 
@@ -25,10 +26,12 @@ Build interactive systems where **multiple devices communicate over a network** 
 - A: Learn MQTT messaging
 - B: Try collaborative pixel grid demo  
 - C: Build your own distributed system
+</details>
 
 ---
 
 ## Part A: MQTT Messaging
+<details>
 
 MQTT = lightweight messaging for IoT. Publish/subscribe model with central broker.
 
@@ -63,6 +66,7 @@ mosquitto_pub -h farlab.infosci.cornell.edu -p 1883 -t 'IDD/test/yourname' -m 'H
 **🔧 Debug Tool:** View all MQTT messages in real-time at `http://farlab.infosci.cornell.edu:5001`
 
 ![MQTT Explorer showing messages](imgs/MQTT-explorer.png)
+</details>
 
 **💡 Brainstorm 5 ideas for messaging between devices**
 
@@ -71,6 +75,7 @@ MQTT agrees on almost nothing in advance: you invent the topics and what the mes
 ---
 
 ## Part B: Collaborative Pixel Grid
+<details>
 
 Each Pi = one pixel, controlled by RGB sensor, displayed in real-time grid.
 
@@ -130,12 +135,14 @@ python pixel_grid_publisher.py
 Hold colored objects near sensor to change your pixel!
 
 ![Pixel grid with two devices](imgs/two-devices-grid.png)
+</details>
 
 **📸 Include: Screenshot of grid + photo of your Pi setup**
 
 ---
 
 ## Part C: Make Your Own
+<details>
 
 **Requirements:**
 - 3+ people, 3+ Pis
@@ -166,6 +173,7 @@ Hold colored objects near sensor to change your pixel!
 ### Deliverables
 
 Replace this README with your documentation:
+</details>
 
 **1. Project Description**
 
@@ -204,6 +212,7 @@ Replace this README with your documentation:
 
 
 ---
+<details>
 
 ## Optional Stretch: Self-Describing Devices
 
@@ -323,3 +332,5 @@ Before submitting:
 ---
 
 Resources: [MQTT Guide](https://www.hivemq.com/mqtt-essentials/) | [Paho Python](https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php) | [Flask-SocketIO](https://flask-socketio.readthedocs.io/)
+</details>
+
