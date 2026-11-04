@@ -168,7 +168,14 @@ Hold colored objects near sensor to change your pixel!
 Replace this README with your documentation:
 
 **1. Project Description**
-- What does it do? Why interesting? User experience?
+
+- **What does it do?**: We built a competitive, distributed version of Simon Says. A central laptop acts as the server, and the other Raspberry Pis act as player controllers. The server broadcasts a command to both screens (e.g., "SIMON SAYS: FIRST TO SHOW RED WINS"). The players race to show a red object to their Pi's APDS-9960 sensor. The first sensor to detect the action and publish the event to the server wins the round.
+
+
+- **Why is it interesting?**: It tests physical reflexes and cognitive load using network latency. We added two mechanics to make it harder and more challenging: a 50% chance of a "fake-out" (the server drops the "Simon Says" prefix, meaning anyone who triggers their sensor loses a point), and a shrinking timer. As the score increases, the reaction window drops from 3.5 seconds down to 1.2 seconds.
+
+
+- **User Experience:**: Players stand side-by-side, with the colored objects on the table, watching a central screen. They have to read the command, process whether it is a fake-out, and be the first to take the colored object from the table to the sensor before the other person.
 
 **2. Architecture Diagram**
 - Hardware, connections, data flow
@@ -192,6 +199,9 @@ Replace this README with your documentation:
 - How did sensor events work?
 - What would you improve?
 - Where did computation happen in your system, and why there? (If you used a language model: did it run on every event, or only at setup?)
+
+
+
 
 ---
 
