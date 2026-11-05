@@ -68,7 +68,22 @@ mosquitto_pub -h farlab.infosci.cornell.edu -p 1883 -t 'IDD/test/yourname' -m 'H
 
 **💡 Brainstorm 5 ideas for messaging between devices**
 
+- Piano Posture Monitor: A proximity sensor on an edge Pi mounted to the piano measures the pianist's distance from the keys. If they lean in too close for too long, it publishes a message to a central screen to display a posture warning.
+
+- Distributed Visual Metronome: A central server publishes a constant tempo pulse (e.g., 120 BPM) over MQTT. Multiple edge Pis placed around a room subscribe to the topic and flash their local LEDs in perfect sync for a group piano ensemble.
+
+- Co-Watching Sync Button: When watching a TV show with a friend in a different room, pressing a physical button on Pi 1 publishes a "pause" command to the broker, which instantly pauses the media player running on Pi 2 so you can take synchronized snack breaks.
+
+- Ambient TV Lighting: An APDS-9960 color sensor on Pi 1 reads the dominant color of the TV screen during a show and publishes the RGB values to Pi 2, which drives an ambient LED light strip behind the couch to match the scene.
+
+- Automatic Practice Mute: A sensor on Pi 1 detects when piano practice starts (either via physical vibration or a proximity trigger on the fallboard) and publishes a message to Pi 2 in the living room to automatically lower the volume of the TV.
+
+
+
+<details>
+
 MQTT agrees on almost nothing in advance: you invent the topics and what the messages mean. Smart-home standards like Matter fix the vocabulary instead (every "light" behaves the same). Keep this trade-off in mind when you design your topics in Part C.
+</details>
 
 ---
 
@@ -137,6 +152,10 @@ Hold colored objects near sensor to change your pixel!
 
 **📸 Include: Screenshot of grid + photo of your Pi setup**
 
+<img width="2119" height="1208" alt="IMG_1815" src="https://github.com/user-attachments/assets/0a06797e-4d59-443e-ae74-1c6cf4c4bc30" />
+
+<img width="1440" height="778" alt="Screenshot 2026-11-04 at 8 58 46 PM" src="https://github.com/user-attachments/assets/6697da01-a0d7-40a1-8782-e3b41b2e73b3" />
+
 ---
 
 ## Part C: Make Your Own
@@ -181,7 +200,7 @@ Replace this README with your documentation:
 - **Why is it interesting?**: It tests physical reflexes and cognitive load using network latency. We made it more challenging: a 50% chance of a "fake-out" (the server drops the "Simon Says" prefix, meaning anyone who triggers their sensor loses a point).
 
 
-- **User Experience:**: Players stand side-by-side, with the colored objects on the table. The host reads out loud the command, the players have to process whether it is a fake-out, and be the first to take the colored object from the table to the sensor before the other person.
+- **User Experience**: Players stand side-by-side, with the colored objects on the table. The host reads out loud the command, the players have to process whether it is a fake-out, and be the first to take the colored object from the table to the sensor before the other person.
 
 **2. Architecture Diagram**
 
@@ -204,6 +223,9 @@ IDD/simon_says_team/simon/+/event: A wildcard topic. Pi 1 publishes to .../pi1/e
 
 
 **Code Snippets and Explanations:**
+
+For the full code, please see ```game_server.py``` and ```game_client.py```
+
 
 Snippet 1: Edge Computing & Thresholds (Client)
 
