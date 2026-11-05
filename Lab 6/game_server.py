@@ -2,14 +2,13 @@ import time
 import random
 import paho.mqtt.client as mqtt
 
-TEAM_NAME = "simon_says_team"
 BROKER = "farlab.infosci.cornell.edu"
 PORT = 1883
 USER = "idd"
 PASSWORD = "device@theFarm"
 
-COMMAND_TOPIC = f"IDD/{TEAM_NAME}/simon/command"
-EVENT_TOPIC_WILDCARD = f"IDD/{TEAM_NAME}/simon/+/event"
+COMMAND_TOPIC = f"IDD/simon_says_team/simon/command"
+EVENT_TOPIC_WILDCARD = f"IDD/simon_says_team/simon/+/event"
 
 current_event = None
 event_source = None
@@ -17,11 +16,10 @@ event_source = None
 
 def on_message(client, userdata, msg):
     global current_event, event_source
-    # We only care about the FIRST message per round.
-    # If current_event is already set, ignore latecomers.
+    # Only capture the first person to trigger their sensor
     if current_event is None:
         parts = msg.topic.split('/')
-        event_source = parts[3]  # Extracts 'pi1' or 'pi2'
+        event_source = parts[3]
         current_event = msg.payload.decode()
 
 
@@ -35,18 +33,15 @@ client.loop_start()
 scores = {"pi1": 0, "pi2": 0}
 actions = ["red", "green", "close", "blue"]
 
-print(f"Starting HEAD-TO-HEAD Simon Says...")
+print(f"Starting HEAD-TO-HEAD Race...")
 time.sleep(2)
 
 try:
     while True:
         target_action = random.choice(actions)
-        is_simon = random.choice([True, False])
+        is_simon = random.choice([True, False])  # 50% chance of a fake-out
 
-        # Shrinking Timer based on the highest score
-        max_score = max(scores.values())
-        time_limit = max(1.2, 3.5 - (max_score * 0.15))
-
+        # Generate the correct prompt
         if is_simon:
             command_text = f"SIMON SAYS: FIRST TO SHOW [{target_action.upper()}] WINS!"
         else:
@@ -54,49 +49,50 @@ try:
 
         print("\n" + "="*50)
         print(f"SCORES -> P1: {scores['pi1']} | P2: {scores['pi2']}")
-        print(f"DISPLAYING: {command_text}")
+        print("\n*** READ THIS OUT LOUD ***")
+        print(f"-> {command_text}")
 
+        # Broadcast the text to the players' screens
         client.publish(COMMAND_TOPIC, f"display:{command_text}")
 
-        # Clear the event trigger right before starting the clock
+        # Clear any accidental early triggers
         current_event = None
         event_source = None
 
-        start_time = time.time()
-        acted = False
+        print("Listening for sensors... (5 seconds to react!)")
 
-        # The Timer Loop
-        while time.time() - start_time < time_limit:
-            if current_event:
-                acted = True
-                break  # First person to trigger it stops the clock
+        # 5-SECOND TIMEOUT LOOP
+        start_time = time.time()
+        while current_event is None and time.time() - start_time < 5.0:
             time.sleep(0.05)
 
         # Evaluation Logic
         if is_simon:
-            if acted:
-                if current_event == target_action:
-                    scores[event_source] += 1
-                    result_msg = f"BOOM! {event_source.upper()} got it right first! +1 point."
-                else:
-                    scores[event_source] -= 1
-                    result_msg = f"OOPS! {event_source.upper()} did the wrong action! -1 point."
+            if current_event == target_action:
+                scores[event_source] += 1
+                result_msg = f"BOOM! {event_source.upper()} got it right first! +1 point."
+            elif current_event is not None:
+                scores[event_source] -= 1
+                result_msg = f"OOPS! {event_source.upper()} showed {current_event.upper()}! -1 point."
             else:
-                result_msg = "TOO SLOW! Neither player scores."
-
-        else:  # NOT Simon Says (The Fake-Out)
-            if acted:
+                result_msg = "TOO SLOW! Time expired. No points."
+        else:  # The Fake-Out
+            if current_event is not None:
                 scores[event_source] -= 1
                 result_msg = f"CAUGHT YOU! {event_source.upper()} moved when Simon didn't say! -1 point."
             else:
-                result_msg = "Phew! Both held still."
+                result_msg = "Phew! Both held still. Good job."
 
         print(result_msg)
+
+        # Broadcast the result and score to the players' screens
         client.publish(
             COMMAND_TOPIC, f"result:{result_msg} (P1:{scores['pi1']} P2:{scores['pi2']})")
 
-        time.sleep(3.5)  # Time to reset physical objects before next round
+        # Give them 3.5 seconds to lower their colored objects before the next round starts
+        time.sleep(3.5)
 
+        # Check Win Condition
         WINNING_SCORE = 5
         if scores["pi1"] >= WINNING_SCORE or scores["pi2"] >= WINNING_SCORE:
             if scores["pi1"] > scores["pi2"]:
@@ -112,7 +108,7 @@ try:
             print("#"*50 + "\n")
 
             client.publish(COMMAND_TOPIC, f"display:{game_over_text}")
-            time.sleep(5)  # Leave the victory message up for 5 seconds
+            time.sleep(5)
             break
 
 except KeyboardInterrupt:
