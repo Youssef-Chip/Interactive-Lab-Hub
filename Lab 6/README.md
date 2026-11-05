@@ -175,39 +175,99 @@ Replace this README with your documentation:
 
 **1. Project Description**
 
-- **What does it do?**: We built a competitive, distributed version of Simon Says. A central laptop acts as the server, and the other Raspberry Pis act as player controllers. The server broadcasts a command to both screens (e.g., "SIMON SAYS: FIRST TO SHOW RED WINS"). The players race to show a red object to their Pi's APDS-9960 sensor. The first sensor to detect the action and publish the event to the server wins the round.
+- **What does it do?**: We built a competitive, distributed version of Simon Says. A central laptop acts as the server, and the other Raspberry Pis act as player controllers. The server broadcasts a command to both screens (e.g., "SIMON SAYS: FIRST TO SHOW RED WINS") or the host can also say it out loud. The players race to show a red object to their Pi's APDS-9960 sensor. The first sensor to detect the action and publish the event to the server wins the round.
 
 
-- **Why is it interesting?**: It tests physical reflexes and cognitive load using network latency. We added two mechanics to make it harder and more challenging: a 50% chance of a "fake-out" (the server drops the "Simon Says" prefix, meaning anyone who triggers their sensor loses a point), and a shrinking timer. As the score increases, the reaction window drops from 3.5 seconds down to 1.2 seconds.
+- **Why is it interesting?**: It tests physical reflexes and cognitive load using network latency. We made it more challenging: a 50% chance of a "fake-out" (the server drops the "Simon Says" prefix, meaning anyone who triggers their sensor loses a point).
 
 
-- **User Experience:**: Players stand side-by-side, with the colored objects on the table, watching a central screen. They have to read the command, process whether it is a fake-out, and be the first to take the colored object from the table to the sensor before the other person.
+- **User Experience:**: Players stand side-by-side, with the colored objects on the table. The host reads out loud the command, the players have to process whether it is a fake-out, and be the first to take the colored object from the table to the sensor before the other person.
 
 **2. Architecture Diagram**
 
 <img width="2010" height="1079" alt="IMG_1813" src="https://github.com/user-attachments/assets/58ba4695-aa20-480f-8f7b-c6953886f57f" />
 
 **3. Build Documentation**
-- Photos of each Pi + sensors
-- MQTT topics used
-- Code snippets with explanations
+
+**Hardware Setup:**
+<img width="4032" height="3024" alt="IMG_1815" src="https://github.com/user-attachments/assets/d60e8ae8-99b3-4f6d-bc23-4420801c3ee7" />
+
+ 
+<img width="1593" height="1607" alt="IMG_1818" src="https://github.com/user-attachments/assets/c37f91fc-7a8d-48e1-b77f-c2924e0a7fbe" />
+
+
+**MQTT Topics Used:**
+
+IDD/simon_says_team/simon/command: The central server publishes UI text and game results to this topic. Both edge devices subscribe to it.
+
+IDD/simon_says_team/simon/+/event: A wildcard topic. Pi 1 publishes to .../pi1/event and Pi 2 publishes to .../pi2/event when a physical action is detected. The server subscribes to the wildcard to receive both.
+
+
+**Code Snippets and Explanations:**
+
+Snippet 1: Edge Computing & Thresholds (Client)
+
+The Pi handles the raw sensor math. We tested multiple thresholds to prevent false positives depending on the room lighting. When the condition is met, the Pi publishes a simple string (red) and pauses for 1 second to prevent network spamming.
+
+<img width="277" height="170" alt="Screenshot 2026-11-04 at 8 28 17 PM" src="https://github.com/user-attachments/assets/f1f29778-8425-41cb-8e88-8fdd54b451e5" />
+
+
+Snippet 2: Race Arbitrator & Game Logic (Server)
+
+The server acts as the referee. It runs a 5-second timeout loop waiting for the first MQTT message to arrive. If the command included "Simon Says", it awards a point to the first player to complete the action. If it was a fake-out and a message arrives, that player loses a point.
+
+<img width="728" height="390" alt="Screenshot 2026-11-04 at 8 31 20 PM" src="https://github.com/user-attachments/assets/61be9535-525c-4984-b3b5-b5ccace956b7" />
+
 
 **4. User Testing**
-- **Test with 2+ people NOT on your team**
-- Photos/video of use
-- What did they think before trying?
-- What surprised them?
-- What would they change?
+
+**Test Execution:**
+
+The 2 participants competed head-to-head, using a blue usb, a red pin, and a green calculator cover to trigger the RGB sensors. The host read outloud the commands from the server for an easier user experience.
+
+https://github.com/user-attachments/assets/f86596b0-895c-4430-8c65-67d09e9ae899
+
+
+**What did they think before trying?**
+
+They expected a standard reaction test. They assumed holding the correct color in front of the sensor would be trivial.
+
+
+**What surprised them?**
+
+They were surprised by the difficulty of the "Simon Says" fake-out under a 5-second time constraint when racing againt someone else.
+
+
+**What would they change?**
+
+They requested local physical feedback: adding an LED to the Pi that lights up when their physical action registers correctly instead of waiting for the host to announce the winner of the round.
+
 
 **5. Reflection**
-- What worked well?
-- Challenges with distributed interaction?
-- How did sensor events work?
-- What would you improve?
-- Where did computation happen in your system, and why there? (If you used a language model: did it run on every event, or only at setup?)
 
+**What worked well?**
 
+MQTT handled the race condition logic: the server simply processes the first event string that arrives. We did not need to write complex timestamp-synchronization code across the three devices.
 
+**Challenges with distributed interaction**
+
+The main challenge was the physical separation of the system's components. The central server displayed the game UI, but the players and their edge nodes were positioned too far away to easily read the screen while focusing on their physical sensors. To solve this, we introduced a server host that reads the text commands out loud so the remote players knew when to react.
+
+**How did sensor events work?**
+
+We used discrete event triggers rather than continuous streaming. The Pis continually polled the I2C hardware locally, but only published an MQTT message when a specific threshold was crossed. This minimized network traffic.
+
+**What would you improve?**
+
+We would automate the audio output and distribute the visual feedback. Since the central screen is far away and currently requires a human host to read the text commands out loud, we would implement Piper TTS on the server to automatically speak the prompts. Additionally, adding an RGB LED to each player's Pi that flashes green for a correct action or red for a fake-out penalty would provide immediate local feedback.
+
+**Where did computation happen, and why?**
+
+Computation was split:
+
+Edge (Raspberry Pis): The continuous hardware polling, RGB threshold math, and debouncing occurred on the edge. This saved network bandwidth because we only sent short, discrete strings (e.g., "red") over MQTT instead of raw RGB arrays.
+
+Central Server (Laptop): The game rules, randomized tasks, 5-second timeout loop, and scorekeeping ran centrally. This ensured both players operated on the exact same game clock.
 
 ---
 <details>
