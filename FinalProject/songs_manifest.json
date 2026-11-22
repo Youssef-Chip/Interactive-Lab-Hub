@@ -1,0 +1,38 @@
+{
+  "songs": [
+    {
+      "id": "Elegy_for_Rem_ReZero_Piano Cover",
+      "title": "Elegy For Rem Rezero Piano Cover",
+      "source": "raw_tracks/Elegy_for_Rem_ReZero_Piano Cover.mp3",
+      "default_speed": 1.0,
+      "checkpoints": [
+        {
+          "name": "Full Track",
+          "start": 0.0,
+          "end": null
+        },
+        {
+          "name": "Subaru Walks To Mansion",
+          "start": 0.0,
+          "end": 82.0
+        },
+        {
+          "name": "Sleep Along With My Daughter",
+          "start": 74,
+          "end": 148.0
+        },
+        {
+          "name": "Credit Roll",
+          "start": 142.0,
+          "end": 200.0
+        }
+      ],
+      "rendered_files": {
+        "100": "processed_tracks/Elegy_for_Rem_ReZero_Piano Cover/speed_100.wav",
+        "95": "processed_tracks/Elegy_for_Rem_ReZero_Piano Cover/speed_95.wav",
+        "90": "processed_tracks/Elegy_for_Rem_ReZero_Piano Cover/speed_90.wav",
+        "85": "processed_tracks/Elegy_for_Rem_ReZero_Piano Cover/speed_85.wav"
+      }
+    }
+  ]
+}
