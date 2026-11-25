@@ -2,7 +2,7 @@
   "songs": [
     {
       "id": "Elegy_for_Rem_ReZero_Piano Cover",
-      "title": "Elegy For Rem Rezero Piano Cover",
+      "title": "Elegy For Rem Re:Zero Piano Cover",
       "source": "raw_tracks/Elegy_for_Rem_ReZero_Piano Cover.mp3",
       "default_speed": 1.0,
       "checkpoints": [
@@ -36,7 +36,7 @@
     },
     {
       "id": "Believe Me - SteinsGate Piano Cover",
-      "title": "Believe Me - Steinsgate Piano Cover",
+      "title": "Believe Me - Steins;Gate Piano Cover",
       "source": "raw_tracks/Believe Me - SteinsGate Piano Cover.m4a",
       "default_speed": 1.0,
       "checkpoints": [
@@ -101,14 +101,9 @@
           "end": 141.0
         },
         {
-          "name": "Isha's sacrifice",
-          "start": 141.0,
-          "end": 30.0
-        },
-        {
           "name": "The Aftermath",
-          "start": 15.0,
-          "end": 30.0
+          "start": 141.0,
+          "end": 165.0
         }
       ],
       "rendered_files": {
@@ -129,16 +124,27 @@
           "start": 0.0,
           "end": null
         },
-        {
-          "name": "Section A",
+          {
+          "name": "Ishida asks his friends to go to the festival together",
           "start": 0.0,
-          "end": 15.0
+          "end": 45.0
         },
         {
-          "name": "Section B",
-          "start": 15.0,
-          "end": 30.0
+          "name": "Ishida finally sees everyone's faces",
+          "start": 43.0,
+          "end": 76.0
+        },
+        {
+          "name": "Ishida's tears of happiness",
+          "start": 75.0,
+          "end": 108.0
+        },
+        {
+          "name": "Nishimiya smiles",
+          "start": 108.0,
+          "end": null
         }
+
       ],
       "rendered_files": {
         "100": "processed_tracks/Lit - A Silent Voice Piano Cover/speed_100.wav",
@@ -149,7 +155,7 @@
     },
     {
       "id": "Mozart - Twinkle Twinkle Little Star",
-      "title": "Mozart - Twinkle Twinkle Little Star",
+      "title": "Twinkle Twinkle Little Star - Your Lie In April",
       "source": "raw_tracks/Mozart - Twinkle Twinkle Little Star.m4a",
       "default_speed": 1.0,
       "checkpoints": [
@@ -159,14 +165,14 @@
           "end": null
         },
         {
-          "name": "Section A",
+          "name": "Kousei plays with the kids",
           "start": 0.0,
-          "end": 15.0
+          "end": 57.0
         },
         {
-          "name": "Section B",
-          "start": 15.0,
-          "end": 30.0
+          "name": "See what did I tell you? It's a happy piano, after all!",
+          "start": 57.0,
+          "end": null
         }
       ],
       "rendered_files": {
@@ -178,7 +184,7 @@
     },
     {
       "id": "Red Swan - AOT Piano Cover",
-      "title": "Red Swan - Aot Piano Cover",
+      "title": "Red Swan - AOT Piano Cover",
       "source": "raw_tracks/Red Swan - AOT Piano Cover.mp3",
       "default_speed": 1.0,
       "checkpoints": [
@@ -188,14 +194,24 @@
           "end": null
         },
         {
-          "name": "Section A",
+          "name": "Eren Mikasa and Armin on the Roof As Adults",
           "start": 0.0,
-          "end": 15.0
+          "end": 22.0
         },
         {
-          "name": "Section B",
-          "start": 15.0,
-          "end": 30.0
+          "name": "All the Scouts as kids",
+          "start": 22.0,
+          "end": 72.0
+        },
+        {
+          "name": "Young Eren Running around Old Eren",
+          "start": 72.0,
+          "end": 107
+        },
+          {
+          "name": "Eren Mikasa and Armin As Kids",
+          "start": 107,
+          "end": null
         }
       ],
       "rendered_files": {
@@ -207,7 +223,7 @@
     },
     {
       "id": "The Ultimate Price Piano Cover- Violet Evergarden",
-      "title": "The Ultimate Price Piano Cover- Violet Evergarden",
+      "title": "The Ultimate Price - Piano Cover Violet Evergarden",
       "source": "raw_tracks/The Ultimate Price Piano Cover- Violet Evergarden.mp3",
       "default_speed": 1.0,
       "checkpoints": [
@@ -217,14 +233,34 @@
           "end": null
         },
         {
-          "name": "Section A",
+          "name": "Major Tells Violet To Leave Him after He's Shot Twice",
           "start": 0.0,
-          "end": 15.0
+          "end": 42.0
         },
         {
-          "name": "Section B",
-          "start": 15.0,
-          "end": 30.0
+          "name": "Violet Loses Both Her Arms Carrying Her Major",
+          "start": 42.0,
+          "end": 119.0
+        },
+        {
+          "name": "Violet Loses Both Her Arms Carrying Her Major",
+          "start": 117.0,
+          "end": 119.0
+        },
+        {
+          "name": "Violet Loses Both Her Arms Carrying Her Major",
+          "start": 117.0,
+          "end": 154.0
+        },
+        {
+          "name": "Major: From The Bottom Of My Heart, I Love You",
+          "start": 152.0,
+          "end": 176.0
+        },
+        {
+          "name": "Violet: What is Love",
+          "start": 176.0,
+          "end": null
         }
       ],
       "rendered_files": {
@@ -246,14 +282,44 @@
           "end": null
         },
         {
-          "name": "Section A",
+          "name": "Jinx Lets Go Of Powder and Fires the Rocket",
           "start": 0.0,
-          "end": 15.0
+          "end": 65.0
         },
         {
-          "name": "Section B",
-          "start": 15.0,
-          "end": 30.0
+          "name": "Why Don't You Love who I Am, What we could have been",
+          "start": 63.0,
+          "end": 93.0
+        },
+        {
+          "name": "Council Is Voting For Peace",
+          "start": 92.0,
+          "end": 130.0
+        },
+        {
+          "name": "Ray Chen Goes Crazy On The Violin",
+          "start": 128.0,
+          "end": 159.0
+        },
+        {
+          "name": "I hope you know we had everything",
+          "start": 155.0,
+          "end": 185.0
+        },
+        {
+          "name": "Ray Chen's Second Violin Solo",
+          "start": 183.0,
+          "end": 200.0
+        },
+        {
+          "name": "I want you to hurt like you hurt me today",
+          "start": 183.0,
+          "end": null
+        },
+        {
+          "name": "Rocket Hits The Council - What Could Have Been",
+          "start": 197.0,
+          "end": null
         }
       ],
       "rendered_files": {
