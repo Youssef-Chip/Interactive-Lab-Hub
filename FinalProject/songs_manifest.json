@@ -46,20 +46,32 @@
           "end": null
         },
         {
-          "name": "Section A",
+          "name": "Kurisu Opens Up to Okabe About her Father",
           "start": 0.0,
-          "end": 15.0
+          "end": 37.0
         },
         {
-          "name": "Section B",
-          "start": 15.0,
-          "end": 30.0
+          "name": "Kurisu's Past",
+          "start": 37.0,
+          "end": 75.0
+        },
+        {
+          "name": "Kurisu's Conviction",
+          "start": 75.0,
+          "end": 123.0
         }
-      ]
+
+      ],
+      "rendered_files": {
+        "100": "processed_tracks/Believe Me - SteinsGate Piano Cover/speed_100.wav",
+        "95": "processed_tracks/Believe Me - SteinsGate Piano Cover/speed_95.wav",
+        "90": "processed_tracks/Believe Me - SteinsGate Piano Cover/speed_90.wav",
+        "85": "processed_tracks/Believe Me - SteinsGate Piano Cover/speed_85.wav"
+      }
     },
     {
       "id": "Isha's Song - Arcane Piano Cover",
-      "title": "Isha'S Song - Arcane Piano Cover",
+      "title": "Isha's Song - Arcane Piano Cover",
       "source": "raw_tracks/Isha's Song - Arcane Piano Cover.mp3",
       "default_speed": 1.0,
       "checkpoints": [
@@ -69,16 +81,42 @@
           "end": null
         },
         {
-          "name": "Section A",
+          "name": "Isha sees Warwick's Rampage",
           "start": 0.0,
-          "end": 15.0
+          "end": 67.0
         },
         {
-          "name": "Section B",
+          "name": "Isha starts running",
+          "start": 60.0,
+          "end": 93.0
+        },
+        {
+          "name": "Isha's flashbacks with Jinx",
+          "start": 83.0,
+          "end": 141.0
+        },
+        {
+          "name": "Jinx Realizes What Isha Is About to do",
+          "start": 115.0,
+          "end": 141.0
+        },
+        {
+          "name": "Isha's sacrifice",
+          "start": 141.0,
+          "end": 30.0
+        },
+        {
+          "name": "The Aftermath",
           "start": 15.0,
           "end": 30.0
         }
-      ]
+      ],
+      "rendered_files": {
+        "100": "processed_tracks/Isha's Song - Arcane Piano Cover/speed_100.wav",
+        "95": "processed_tracks/Isha's Song - Arcane Piano Cover/speed_95.wav",
+        "90": "processed_tracks/Isha's Song - Arcane Piano Cover/speed_90.wav",
+        "85": "processed_tracks/Isha's Song - Arcane Piano Cover/speed_85.wav"
+      }
     },
     {
       "id": "Lit - A Silent Voice Piano Cover",
@@ -101,7 +139,13 @@
           "start": 15.0,
           "end": 30.0
         }
-      ]
+      ],
+      "rendered_files": {
+        "100": "processed_tracks/Lit - A Silent Voice Piano Cover/speed_100.wav",
+        "95": "processed_tracks/Lit - A Silent Voice Piano Cover/speed_95.wav",
+        "90": "processed_tracks/Lit - A Silent Voice Piano Cover/speed_90.wav",
+        "85": "processed_tracks/Lit - A Silent Voice Piano Cover/speed_85.wav"
+      }
     },
     {
       "id": "Mozart - Twinkle Twinkle Little Star",
@@ -124,7 +168,13 @@
           "start": 15.0,
           "end": 30.0
         }
-      ]
+      ],
+      "rendered_files": {
+        "100": "processed_tracks/Mozart - Twinkle Twinkle Little Star/speed_100.wav",
+        "95": "processed_tracks/Mozart - Twinkle Twinkle Little Star/speed_95.wav",
+        "90": "processed_tracks/Mozart - Twinkle Twinkle Little Star/speed_90.wav",
+        "85": "processed_tracks/Mozart - Twinkle Twinkle Little Star/speed_85.wav"
+      }
     },
     {
       "id": "Red Swan - AOT Piano Cover",
@@ -147,7 +197,13 @@
           "start": 15.0,
           "end": 30.0
         }
-      ]
+      ],
+      "rendered_files": {
+        "100": "processed_tracks/Red Swan - AOT Piano Cover/speed_100.wav",
+        "95": "processed_tracks/Red Swan - AOT Piano Cover/speed_95.wav",
+        "90": "processed_tracks/Red Swan - AOT Piano Cover/speed_90.wav",
+        "85": "processed_tracks/Red Swan - AOT Piano Cover/speed_85.wav"
+      }
     },
     {
       "id": "The Ultimate Price Piano Cover- Violet Evergarden",
@@ -170,7 +226,13 @@
           "start": 15.0,
           "end": 30.0
         }
-      ]
+      ],
+      "rendered_files": {
+        "100": "processed_tracks/The Ultimate Price Piano Cover- Violet Evergarden/speed_100.wav",
+        "95": "processed_tracks/The Ultimate Price Piano Cover- Violet Evergarden/speed_95.wav",
+        "90": "processed_tracks/The Ultimate Price Piano Cover- Violet Evergarden/speed_90.wav",
+        "85": "processed_tracks/The Ultimate Price Piano Cover- Violet Evergarden/speed_85.wav"
+      }
     },
     {
       "id": "What Could Have Been -  Arcane Piano Cover",
@@ -193,7 +255,13 @@
           "start": 15.0,
           "end": 30.0
         }
-      ]
+      ],
+      "rendered_files": {
+        "100": "processed_tracks/What Could Have Been -  Arcane Piano Cover/speed_100.wav",
+        "95": "processed_tracks/What Could Have Been -  Arcane Piano Cover/speed_95.wav",
+        "90": "processed_tracks/What Could Have Been -  Arcane Piano Cover/speed_90.wav",
+        "85": "processed_tracks/What Could Have Been -  Arcane Piano Cover/speed_85.wav"
+      }
     }
   ]
 }
