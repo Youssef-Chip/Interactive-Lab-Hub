@@ -33,6 +33,167 @@
         "90": "processed_tracks/Elegy_for_Rem_ReZero_Piano Cover/speed_90.wav",
         "85": "processed_tracks/Elegy_for_Rem_ReZero_Piano Cover/speed_85.wav"
       }
+    },
+    {
+      "id": "Believe Me - SteinsGate Piano Cover",
+      "title": "Believe Me - Steinsgate Piano Cover",
+      "source": "raw_tracks/Believe Me - SteinsGate Piano Cover.m4a",
+      "default_speed": 1.0,
+      "checkpoints": [
+        {
+          "name": "Full Track",
+          "start": 0.0,
+          "end": null
+        },
+        {
+          "name": "Section A",
+          "start": 0.0,
+          "end": 15.0
+        },
+        {
+          "name": "Section B",
+          "start": 15.0,
+          "end": 30.0
+        }
+      ]
+    },
+    {
+      "id": "Isha's Song - Arcane Piano Cover",
+      "title": "Isha'S Song - Arcane Piano Cover",
+      "source": "raw_tracks/Isha's Song - Arcane Piano Cover.mp3",
+      "default_speed": 1.0,
+      "checkpoints": [
+        {
+          "name": "Full Track",
+          "start": 0.0,
+          "end": null
+        },
+        {
+          "name": "Section A",
+          "start": 0.0,
+          "end": 15.0
+        },
+        {
+          "name": "Section B",
+          "start": 15.0,
+          "end": 30.0
+        }
+      ]
+    },
+    {
+      "id": "Lit - A Silent Voice Piano Cover",
+      "title": "Lit - A Silent Voice Piano Cover",
+      "source": "raw_tracks/Lit - A Silent Voice Piano Cover.m4a",
+      "default_speed": 1.0,
+      "checkpoints": [
+        {
+          "name": "Full Track",
+          "start": 0.0,
+          "end": null
+        },
+        {
+          "name": "Section A",
+          "start": 0.0,
+          "end": 15.0
+        },
+        {
+          "name": "Section B",
+          "start": 15.0,
+          "end": 30.0
+        }
+      ]
+    },
+    {
+      "id": "Mozart - Twinkle Twinkle Little Star",
+      "title": "Mozart - Twinkle Twinkle Little Star",
+      "source": "raw_tracks/Mozart - Twinkle Twinkle Little Star.m4a",
+      "default_speed": 1.0,
+      "checkpoints": [
+        {
+          "name": "Full Track",
+          "start": 0.0,
+          "end": null
+        },
+        {
+          "name": "Section A",
+          "start": 0.0,
+          "end": 15.0
+        },
+        {
+          "name": "Section B",
+          "start": 15.0,
+          "end": 30.0
+        }
+      ]
+    },
+    {
+      "id": "Red Swan - AOT Piano Cover",
+      "title": "Red Swan - Aot Piano Cover",
+      "source": "raw_tracks/Red Swan - AOT Piano Cover.mp3",
+      "default_speed": 1.0,
+      "checkpoints": [
+        {
+          "name": "Full Track",
+          "start": 0.0,
+          "end": null
+        },
+        {
+          "name": "Section A",
+          "start": 0.0,
+          "end": 15.0
+        },
+        {
+          "name": "Section B",
+          "start": 15.0,
+          "end": 30.0
+        }
+      ]
+    },
+    {
+      "id": "The Ultimate Price Piano Cover- Violet Evergarden",
+      "title": "The Ultimate Price Piano Cover- Violet Evergarden",
+      "source": "raw_tracks/The Ultimate Price Piano Cover- Violet Evergarden.mp3",
+      "default_speed": 1.0,
+      "checkpoints": [
+        {
+          "name": "Full Track",
+          "start": 0.0,
+          "end": null
+        },
+        {
+          "name": "Section A",
+          "start": 0.0,
+          "end": 15.0
+        },
+        {
+          "name": "Section B",
+          "start": 15.0,
+          "end": 30.0
+        }
+      ]
+    },
+    {
+      "id": "What Could Have Been -  Arcane Piano Cover",
+      "title": "What Could Have Been -  Arcane Piano Cover",
+      "source": "raw_tracks/What Could Have Been -  Arcane Piano Cover.mp3",
+      "default_speed": 1.0,
+      "checkpoints": [
+        {
+          "name": "Full Track",
+          "start": 0.0,
+          "end": null
+        },
+        {
+          "name": "Section A",
+          "start": 0.0,
+          "end": 15.0
+        },
+        {
+          "name": "Section B",
+          "start": 15.0,
+          "end": 30.0
+        }
+      ]
     }
   ]
 }
