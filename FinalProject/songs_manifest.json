@@ -60,7 +60,6 @@
           "start": 75.0,
           "end": 123.0
         }
-
       ],
       "rendered_files": {
         "100": "processed_tracks/Believe Me - SteinsGate Piano Cover/speed_100.wav",
@@ -124,7 +123,7 @@
           "start": 0.0,
           "end": null
         },
-          {
+        {
           "name": "Ishida asks his friends to go to the festival together",
           "start": 0.0,
           "end": 45.0
@@ -144,7 +143,6 @@
           "start": 108.0,
           "end": null
         }
-
       ],
       "rendered_files": {
         "100": "processed_tracks/Lit - A Silent Voice Piano Cover/speed_100.wav",
@@ -208,7 +206,7 @@
           "start": 72.0,
           "end": 107
         },
-          {
+        {
           "name": "Eren Mikasa and Armin As Kids",
           "start": 107,
           "end": null

@@ -141,8 +141,7 @@ def draw_oled(
     img = Image.new("1", (128, 32))
     draw = ImageDraw.Draw(img)
 
-    state_tag = "LOOP" if is_playing else "PAUS"
-    status_line = f"{state_tag}: {cp_name}"
+    status_line = f"Section: {cp_name}"
 
     draw_marquee_line(draw, song_title, y=0, max_width=128, font=font, now=now)
     draw_marquee_line(draw, status_line, y=11, max_width=128, font=font, now=now)
