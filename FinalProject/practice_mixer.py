@@ -16,6 +16,13 @@ MANIFEST_PATH = Path("songs_manifest.json")
 SPEED_STEPS = [100, 95, 90, 85]
 
 
+def scale_timestamp(sec: float | None, speed_pct: int) -> float | None:
+    if sec is None:
+        return None
+    factor = 100.0 / float(speed_pct)
+    return float(sec) * factor
+
+
 class AudioPlayer:
     def __init__(self):
         self.proc: subprocess.Popen | None = None
@@ -184,9 +191,9 @@ def main():
             checkpoints = song.get("checkpoints", [{"name": "Full", "start": 0.0, "end": None}])
             cp_idx = max(0, min(cp_idx, len(checkpoints) - 1))
             cp = checkpoints[cp_idx]
-            start_sec = float(cp.get("start", 0.0))
-            end_raw = cp.get("end", None)
-            end_sec = float(end_raw) if end_raw is not None else None
+            base_start_sec = float(cp.get("start", 0.0))
+            base_end_raw = cp.get("end", None)
+            base_end_sec = float(base_end_raw) if base_end_raw is not None else None
 
             # 1. Encoder Rotation: Select Checkpoint (never changes play/pause state)
             enc_pos = encoder.position
@@ -194,9 +201,9 @@ def main():
                 delta = enc_pos - last_enc_pos
                 cp_idx = (cp_idx + delta) % len(checkpoints)
                 cp = checkpoints[cp_idx]
-                start_sec = float(cp.get("start", 0.0))
-                end_raw = cp.get("end", None)
-                end_sec = float(end_raw) if end_raw is not None else None
+                base_start_sec = float(cp.get("start", 0.0))
+                base_end_raw = cp.get("end", None)
+                base_end_sec = float(base_end_raw) if base_end_raw is not None else None
                 last_enc_pos = enc_pos
                 if is_playing:
                     player.stop()
@@ -205,7 +212,7 @@ def main():
             enc_pressed = not enc_btn.value
             if enc_pressed and not last_enc_btn:
                 is_playing = not is_playing
-                player.stop()  # Always resets/starts cleanly from start_sec
+                player.stop()  # Always resets/starts cleanly from scaled start_sec
             last_enc_btn = enc_pressed
 
             # 3. Joystick: Speed (X), Volume (Y), Next Song (Click)
@@ -224,6 +231,7 @@ def main():
                 time.sleep(0.2)
             last_joy_btn = joy_btn_pressed
 
+            # Speed on X (inverted joystick): Left increases speed, Right decreases speed
             if now - last_speed_move > 0.28:
                 s_i = SPEED_STEPS.index(speed_pct)
                 if x_val < 300 and s_i > 0:
@@ -237,15 +245,19 @@ def main():
                     if is_playing:
                         player.stop()
 
+            # Volume on Y (inverted joystick): Up decreases volume, Down increases volume
             if now - last_vol_move > 0.12:
                 if y_val > 700:
-                    volume = min(100, volume + 5)
-                    last_vol_move = now
-                elif y_val < 300:
                     volume = max(0, volume - 5)
                     last_vol_move = now
+                elif y_val < 300:
+                    volume = min(100, volume + 5)
+                    last_vol_move = now
 
-            # 4. OLED & Audio Sync
+            # 4. OLED & Audio Sync (scale checkpoint timestamps to match slowed audio duration)
+            scaled_start = scale_timestamp(base_start_sec, speed_pct) or 0.0
+            scaled_end = scale_timestamp(base_end_sec, speed_pct)
+
             cp_display_name = cp.get("name", "Section")
             draw_oled(
                 oled,
@@ -259,7 +271,7 @@ def main():
             )
 
             wav_path = song.get("rendered_files", {}).get(str(speed_pct))
-            player.sync(is_playing, wav_path, volume, start_sec, end_sec)
+            player.sync(is_playing, wav_path, volume, scaled_start, scaled_end)
 
             time.sleep(0.03)
 
